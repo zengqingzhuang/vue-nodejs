@@ -13,10 +13,14 @@ module.exports = {
 		extensions: ['.vue', '.js', 'json'],
 		alias: {
 			'vue': 'vue/dist/vue.js'
-		}
+		},
+		modules: [
+			//path.join(__dirname, "src"),
+			"node_modules"
+		]
 	},
 	resolveLoader: {
-		//fallback: [path.join(__dirname, '/node_modules')]
+
 	},
 	module: {
 		rules: [{
@@ -29,12 +33,10 @@ module.exports = {
 				query: {
 					compact: true
 				} //解决js文件大于100KB报错的问题
-			},
-			{
+			}, {
 				test: /\.less$/,
 				loader: 'less-loader'
-			},
-			{
+			}, {
 				test: /\.sass$/,
 				loader: 'sass-loader'
 			},
@@ -58,11 +60,15 @@ module.exports = {
 	},
 	devtool: 'source-map',
 	plugins: [
+		//new webpack.optimize.UglifyJsPlugin(), //线上配置
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			template: 'index.html',
 			inject: true
-		})
+		}),
+		// new webpack.optimize.CommonsChunkPlugin({
+		// 	name: 'vendor'
+		// })
 	]
 }
 
