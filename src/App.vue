@@ -37,7 +37,7 @@
 		</footer>
 	</div>
 </template>
-<script type="">
+<script type="text/ecmascript-6">
 	export default {
 		data() {
 			return {
@@ -52,6 +52,6 @@
 	}
 </script>
 <style>
-@import './assets/css/pub.css';
-@import './assets/css/sidebar.css';
+@import './common/css/pub.css';
+@import './common/css/sidebar.css';
 </style>

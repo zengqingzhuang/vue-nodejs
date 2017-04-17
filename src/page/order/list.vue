@@ -1,6 +1,3 @@
-<style type="text/css">
-	@import '../../assets/css/demo.css';
-</style>
 <template>
     <div class="common_table clear">
         <table cellpadding="0" cellspacing="0">
@@ -28,7 +25,10 @@
         </table>
 	</div>
 </template>
-<script>
-    import demojs from '../../assets/js/orgnization/list.js';
-    export default demojs;
+<script type="text/ecmascript-6">
+    import list from './list.js';
+    export default list;
 </script>
+<style lang="css" rel="stylesheet/css">
+    @import 'list.css';
+</style>

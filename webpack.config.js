@@ -6,16 +6,16 @@ module.exports = {
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		publicPath: '/',
-		filename: 'build.js'
+		filename: '[chunkhash].[name].js'
 	},
 	resolve: {
-		extensions: ['.vue', '.js', 'json'],
+		extensions: ['.vue', '.js', '.json'],
 		alias: {
-			'vue': 'vue/dist/vue.js'
+			'vue': 'vue/dist/vue.js',
+			'components': path.resolve(__dirname, 'src/components/')
 		},
-		modules: [
-			//path.join(__dirname, "src"),
+		modules: [ // webpack 解析模块时应该搜索的目录
+			path.join(__dirname, "src"),
 			"node_modules"
 		]
 	},
@@ -34,6 +34,10 @@ module.exports = {
 					compact: true
 				} //解决js文件大于100KB报错的问题
 			}, {
+				test: /\.css$/,
+				loader: 'css-loader'
+			}
+			, {
 				test: /\.less$/,
 				loader: 'less-loader'
 			}, {
@@ -45,7 +49,7 @@ module.exports = {
 			//   loader: 'vue-html-loader'
 			// },
 			{
-				test: /\.(png|jpg|gif|svg)$/,
+				test: /\.(png|jpg|gif|svg|woff|woff2|eot|ttf)$/,
 				loader: 'url-loader',
 				query: {
 					limit: 10000,
@@ -60,14 +64,15 @@ module.exports = {
 	},
 	devtool: 'source-map',
 	plugins: [
-		//new webpack.optimize.UglifyJsPlugin(), //线上配置
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
 			template: 'index.html',
 			inject: true
-		}),
-		// new webpack.optimize.CommonsChunkPlugin({
-		// 	name: 'vendor'
+		}), 
+		//线上配置
+		//new webpack.optimize.UglifyJsPlugin(),
+		// new webpack.optimize.CommonsChunkPlugin({ // 提取公共模块代码
+		// 	name: ['vendor', 'manifest']
 		// })
 	]
 }

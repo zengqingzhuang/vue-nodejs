@@ -9,15 +9,13 @@ import orgList from './page/orgnization/list.vue';
 import orgAdd from './page/orgnization/add.vue';
 // 订单列表页面
 import orderList from './page/order/list.vue';
-// 新增订单页面
-import orderAdd from './page/order/add.vue';
 // demo页面
 import demo from './page/demo.vue';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
 //Vue.config.devtools = true
-
+// 路由地址必须与文件路径一致，便于根据路由来查找文件
 const router = new VueRouter({
 	routes: [{
 			path: '/',
@@ -31,9 +29,6 @@ const router = new VueRouter({
 			},{
 				path: '/order/list',
 				component: orderList
-			},{
-				path: '/order/add',
-				component: orderAdd
 			}]
 		}, {
 			path: '/demo',
