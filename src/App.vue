@@ -52,6 +52,6 @@
 	}
 </script>
 <style>
-@import './common/css/pub.css';
+@import './common/css/pub.scss';
 @import './common/css/sidebar.css';
 </style>

@@ -35,9 +35,21 @@ module.exports = {
 				} //解决js文件大于100KB报错的问题
 			}, {
 				test: /\.css$/,
-				loader: 'css-loader'
-			}
-			, {
+				use: [{
+					loader: "style-loader"
+				}, {
+					loader: "css-loader"
+				}]
+			}, {
+				test: /\.scss$/,
+				use: [{
+					loader: "style-loader"
+				}, {
+					loader: "css-loader"
+				}, {
+					loader: "sass-loader"
+				}]
+			}, {
 				test: /\.less$/,
 				loader: 'less-loader'
 			}, {
@@ -68,7 +80,7 @@ module.exports = {
 			filename: 'index.html',
 			template: 'index.html',
 			inject: true
-		}), 
+		}),
 		//线上配置
 		//new webpack.optimize.UglifyJsPlugin(),
 		// new webpack.optimize.CommonsChunkPlugin({ // 提取公共模块代码

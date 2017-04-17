@@ -14,7 +14,7 @@ var express = require('express'),
 //express的日志配置
 log4js.configure(config.log4js);
 app.use(log4js.connectLogger(log4js.getLogger("http"), {
-	level: 'auto' //自动调整日志级别
+	level: 'auto'
 }));
 //客户端请求的body中的内容处理
 app.use(bodyParser.json());
@@ -27,11 +27,8 @@ app.locals = {
 	title: config.application.title,
 	settings: {}
 };
-//设置静态资源
-app.use(express.static(path.join(__dirname, '../public')));
 //设置url图标
-//app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
-//web浏览器发送cookie内容--req.cookies
+app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
 app.use(cookieParser());
 
 // webpack
@@ -42,7 +39,7 @@ app.use(webpackDevMiddleware(webpackCompiler, {
 	lazy: true
 }));
 var hotMiddleware = require('webpack-hot-middleware')(webpack(require('../webpack.config')));
-app.use(hotMiddleware)
+app.use(hotMiddleware);
 
 //同步递归加载所有的路由
 function readRouter(folderName) {
@@ -64,7 +61,7 @@ readRouter('routers');
 //next()错误处理 catch 404
 app.use(function(req, res, next) {
 	var err = {
-		status: 500,
+		status: 404,
 		message: '接口异常'
 	};
 	next(err);
@@ -85,6 +82,7 @@ app.use(function(err, req, res, next) {
 		format = format[0].split(".")[1].toLowerCase();
 	}
 	if (format === 'json' || format === 'jsonp') { //接口
+		res.status(err.status);
 		res.set('Content-Type', "application/json");
 		res[format](err);
 		log4js.getLogger().error('error:' + err.message);

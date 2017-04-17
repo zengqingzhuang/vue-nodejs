@@ -26,7 +26,7 @@ Date.prototype.format = function(fmt) { //author: meizz
 			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
 	return fmt;
 };
-// 私钥加密算法
+// 私钥加密算法-OpenSSL加密算法
 exports.encrypt = function(str, secret) {
 	if (typeof str != 'string') return '';
 	var cipher = crypto.createCipher('aes128', secret);
