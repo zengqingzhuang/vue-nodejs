@@ -32,8 +32,9 @@ header h1{overflow:hidden; height:47px;color:#ffffff;font-size:30px;font-weight:
 #container aside.left ul{margin-bottom:10px}
 #container aside.left ul li{height:28px;line-height: 28px;overflow: hidden}
 #container aside.left ul li a{color:#808080;display: block;border-left:2px solid #ebebeb;padding-left:12px}
-#container aside.left ul li.cur a,#container aside.left ul li a:hover{border-left-color:#bababa;background: #fff;text-decoration: none}
-#container aside.left ul li a.cur-page{border-left-color:#bababa;background: #fff;text-decoration: none}
+
+#container aside.left ul li a.cur,
+#container aside.left ul li a:hover{border-left-color:#bababa;background: #fff;text-decoration: none}
 #container section{margin-top:20px;text-align: left;width:930px;}
 
 /*footer*/

@@ -22,6 +22,6 @@
     import list from './list.js';
     export default list;
 </script>
-<style lang="css" rel="stylesheet/css">
-    @import 'list.css';
+<style lang="sass" scoped rel="stylesheet/sass">
+    @import 'list';
 </style>

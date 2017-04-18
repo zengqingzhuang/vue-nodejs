@@ -8,5 +8,5 @@
 	import add from './add.js';
 	export default add;
 </script>
-<style type="text/css">
+<style lang="sass" scoped type="text/sass">
 </style>

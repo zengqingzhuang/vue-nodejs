@@ -18,7 +18,7 @@ class orgModel {
 				createTime: '2015-03-06 10:58',
 				money: 10000000
 			}, {
-				number: 1,
+				number: 2,
 				name: '掌门',
 				createTime: '2015-03-06 10:58',
 				money: 10000000

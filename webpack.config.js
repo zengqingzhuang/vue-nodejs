@@ -1,6 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+let path = require('path');
+let webpack = require('webpack');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+//let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: './src/main.js',
@@ -9,9 +10,10 @@ module.exports = {
 		filename: '[chunkhash].[name].js'
 	},
 	resolve: {
-		extensions: ['.vue', '.js', '.json'],
+		extensions: ['.vue', '.js', '.json', '.scss'],
 		alias: {
 			'vue': 'vue/dist/vue.js',
+			'common': path.resolve(__dirname, 'src/common'),
 			'components': path.resolve(__dirname, 'src/components/')
 		},
 		modules: [ // webpack 解析模块时应该搜索的目录
@@ -49,12 +51,6 @@ module.exports = {
 				}, {
 					loader: "sass-loader"
 				}]
-			}, {
-				test: /\.less$/,
-				loader: 'less-loader'
-			}, {
-				test: /\.sass$/,
-				loader: 'sass-loader'
 			},
 			// {
 			//   test: /\.html$/,
