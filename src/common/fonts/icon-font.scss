@@ -1,0 +1,190 @@
+@import "../scss/color.scss";
+@import "../scss/font-size.scss";
+
+
+$icon-prefix: icon;
+
+$font-face {
+    font-family: "icon-font";
+    src: url("icon-font.woff") format("woff"), /* Chrome, Firefox */
+    url("icon-font.ttf") format("truetype"), /* Chrome, Firefox, Opera, Safari, Android, iOS 4.2+ */
+    url("icon-font.svg#icon") format("svg"); /* iOS 4.1- */
+}
+
+.icon {
+    font-family: "icon-font" !important;
+    font-size: $font-size-base;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: $main-color-primary;
+}
+
+.${icon-prefix}-arrow-right::before {
+    content: "\e674";
+}
+
+.${icon-prefix}-checkbox-off::before {
+    content: "\e675";
+}
+
+.${icon-prefix}-cancel::before {
+    content: "\e676";
+}
+
+.${icon-prefix}-bank-card::before {
+    content: "\e677";
+}
+
+.${icon-prefix}-checkbox-on::before {
+    content: "\e678";
+}
+
+.${icon-prefix}-camera::before {
+    content: "\e679";
+}
+
+.${icon-prefix}-circle::before {
+    content: "\e67a";
+}
+
+.${icon-prefix}-close-revert::before {
+    content: "\e67b";
+}
+
+.${icon-prefix}-close::before {
+    content: "\e67c";
+}
+
+.${icon-prefix}-editor::before {
+    content: "\e67d";
+}
+
+.${icon-prefix}-fail::before {
+    content: "\e67e";
+}
+
+.${icon-prefix}-form::before {
+    content: "\e67f";
+}
+
+.${icon-prefix}-decoration::before {
+    content: "\e680";
+}
+
+.${icon-prefix}-headphone::before {
+    content: "\e681";
+}
+
+.${icon-prefix}-info-revert::before {
+    content: "\e682";
+}
+
+.${icon-prefix}-history::before {
+    content: "\e683";
+}
+
+.${icon-prefix}-house::before {
+    content: "\e684";
+}
+
+.${icon-prefix}-info::before {
+    content: "\e685";
+}
+
+.${icon-prefix}-location::before {
+    content: "\e686";
+}
+
+.${icon-prefix}-ok::before {
+    content: "\e687";
+}
+
+.${icon-prefix}-radio-off::before {
+    content: "\e688";
+}
+
+.${icon-prefix}-question::before {
+    content: "\e689";
+}
+
+.${icon-prefix}-phonebook::before {
+    content: "\e68a";
+}
+
+.${icon-prefix}-radio-on::before {
+    content: "\e68b";
+}
+
+.${icon-prefix}-radio::before {
+    content: "\e68c";
+}
+
+.${icon-prefix}-scan::before {
+    content: "\e68d";
+}
+
+.${icon-prefix}-search::before {
+    content: "\e68e";
+}
+
+.${icon-prefix}-plane::before {
+    content: "\e68f";
+}
+
+.${icon-prefix}-security::before {
+    content: "\e690";
+}
+
+.${icon-prefix}-success::before {
+    content: "\e691";
+}
+
+.${icon-prefix}-telephone::before {
+    content: "\e692";
+}
+
+.${icon-prefix}-waiting::before {
+    content: "\e693";
+}
+
+.${icon-prefix}-supply::before {
+    content: "\e694";
+}
+
+.${icon-prefix}-setting::before {
+    content: "\e695";
+}
+
+.${icon-prefix}-arrow-up::before {
+    content: "\e696";
+}
+
+.${icon-prefix}-arrow-down::before {
+    content: "\e697";
+}
+
+.${icon-prefix}-open-eye::before {
+    content: "\e698";
+}
+
+.${icon-prefix}-close-eye::before {
+    content: "\e699";
+}
+
+.${icon-prefix}-walsafe::before {
+    content: "\e69a";
+}
+
+.${icon-prefix}-shield::before {
+    content: "\e69b";
+}
+
+.${icon-prefix}-plus::before {
+    content: "\e69c";
+}
+
+.${icon-prefix}-logo::before {
+    content: "\e69d";
+}

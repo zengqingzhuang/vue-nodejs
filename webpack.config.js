@@ -36,13 +36,6 @@ module.exports = {
 					compact: true
 				} //解决js文件大于100KB报错的问题
 			}, {
-				test: /\.css$/,
-				use: [{
-					loader: "style-loader"
-				}, {
-					loader: "css-loader"
-				}]
-			}, {
 				test: /\.scss$/,
 				use: [{
 					loader: "style-loader"
