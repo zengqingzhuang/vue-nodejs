@@ -28,11 +28,16 @@
 			        </li>
 			    </ul>
 			</aside>
-			<keep-alive>
-				<section class="right">
-					<router-view></router-view>
-				</section>
-			</keep-alive>
+			<section class="right">
+				<template v-if="curPage !== '/'">
+					<keep-alive>
+						<router-view></router-view>
+					</keep-alive>
+				</template>
+				<template v-else>
+					首页
+				</template>
+			</section>
 		</article>
 		<footer>
 			此处可以写一些介绍

@@ -46,7 +46,7 @@ function readRouter(folderName) {
 	var folderDir = __dirname + '/' + folderName;
 	var fileArry = fs.readdirSync(folderDir);
 	_.forEach(fileArry, function(file) {
-		if (file.indexOf('.js') != -1) {
+		if (/\.js/.test(file)) {
 			var file_path = folderDir + '/' + file,
 				cur_file = fs.statSync(file_path);
 			if (cur_file.isDirectory()) { //是目录
