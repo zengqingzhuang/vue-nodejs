@@ -8,6 +8,7 @@ module.exports = {
 		host: '127.0.0.1',
 		port: 3000 //服务启动端口
 	},
+	outlogs: true,
 	outconsole: {
 		result: true,
 		param: true,

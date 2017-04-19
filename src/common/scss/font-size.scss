@@ -10,22 +10,12 @@
 
 $font-size-base: 14px;
 
-$font-size-48: ceil(($font-size-base * 3.42)); // ~48px
-$font-size-40: ceil(($font-size-base * 2.85)); // ~40px
-$font-size-28: ceil(($font-size-base * 2.00)); // ~28px
-$font-size-22: ceil(($font-size-base * 1.57)); // ~22px
-$font-size-20: ceil(($font-size-base * 1.42)); // ~20px
-$font-size-18: ceil(($font-size-base * 1.28)); // ~18px
-$font-size-16: ceil(($font-size-base * 1.14)); // ~16px
+$font-size-48: ceil($font-size-base * 3.42); // ~48px
+$font-size-40: ceil($font-size-base * 2.85); // ~40px
+$font-size-28: ceil($font-size-base * 2.00); // ~28px
+$font-size-22: ceil($font-size-base * 1.57); // ~22px
+$font-size-20: ceil($font-size-base * 1.42); // ~20px
+$font-size-18: ceil($font-size-base * 1.28); // ~18px
+$font-size-16: ceil($font-size-base * 1.14); // ~16px
 $font-size-14: $font-size-base;
-$font-size-12: ceil(($font-size-base * 0.85)); // ~12px
-
-// -------------------------------- //
-
-
-// [行高]
-
-$line-height-large: 100; //
-$line-height-small: 100; //
-
-// -------------------------------- //
+$font-size-12: ceil($font-size-base * 0.85); // ~12px

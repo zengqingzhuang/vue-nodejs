@@ -28,9 +28,11 @@
 			        </li>
 			    </ul>
 			</aside>
-			<section class="right">
-				<router-view></router-view>
-			</section>
+			<keep-alive>
+				<section class="right">
+					<router-view></router-view>
+				</section>
+			</keep-alive>
 		</article>
 		<footer>
 			此处可以写一些介绍
@@ -54,4 +56,5 @@
 <style lang="sass" rel="stylesheet/sass">
 	@import 'common/scss/pub';
 	@import 'common/scss/sidebar';
+	@import 'common/fonts/icon-font';
 </style>

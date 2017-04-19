@@ -6,8 +6,6 @@
 
 // [色值定义]
 
-// -------------------------------- //
-
 // 主色
 
 $main-color-primary: #6492e3; // 主导航, 按钮, 标题
@@ -26,16 +24,3 @@ $decoration-color-deep: #222; // 数字, 标题, 强提醒
 $decoration-color-dark: #666; // 列表信息, 线框按钮描边
 $decoration-color-light: #999; // 次要信息, 选择框引导文字, 文本框反显文字, 链接文字
 $decoration-color-bright: #bbb; // 弱引导, 弱提示, 文本框引导文字, 线框按钮灰太文字, 线框按钮描边, 分割线  图标
-
-// [特殊定义]
-$black-color: #000;
-$white-color: #fff;
-
-// -------------------------------- //
-
-// form & form like颜色定义
-
-$form-color-primary: #ecf0f5; // 选择框/按钮按下状态
-$form-color-info: #ced4de; // 按钮不可用状态
-$form-color-warning: #e65757; // 逾期按钮按下状态
-$form-color-danger: #ebc3c2; // 逾期按钮不可用状态

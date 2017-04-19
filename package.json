@@ -18,7 +18,8 @@
     "less": "^2.7.2",
     "lodash": "^4.17.4",
     "log4js": "^1.1.1",
-    "serve-favicon": "^2.4.2"
+    "serve-favicon": "^2.4.2",
+    "util": "^0.10.3"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
