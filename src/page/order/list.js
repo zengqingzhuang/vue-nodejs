@@ -1,16 +1,17 @@
 import Vue from 'vue';
-import demo from 'components/demo.vue';
+import demo from 'components/demo';
 export default {
     data(){
         return {
-            name: '张三'
+            orgList: []
         }
     },
     created(){
         this.$http.get('/organization/list.json', {}).then((res) => {
-            console.log(res, '22222');
+            let result = res.data.data || {};
+            this.orgList = result.list;
         }).catch((res) => {
-            
+            alert('接口异常');
         });
     },
     components: {

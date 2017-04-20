@@ -23,9 +23,6 @@
 			        <li>
 			            <a @click="selectCurPage('/order/list')" :class="[curPage === '/order/list' ? 'cur' : '']" href="/#/order/list">订单列表</a>
 			        </li>
-			        <li>
-			            <a @click="selectCurPage('/order/add')" :class="[curPage === '/order/add' ? 'cur' : '']" href="/#/order/add">新增订单</a>
-			        </li>
 			    </ul>
 			</aside>
 			<section class="right">
@@ -35,7 +32,7 @@
 					</keep-alive>
 				</template>
 				<template v-else>
-					首页
+					<home></home>
 				</template>
 			</section>
 		</article>
@@ -45,16 +42,26 @@
 	</div>
 </template>
 <script type="text/ecmascript-6">
+	import home from 'components/home';
 	export default {
 		data() {
 			return {
 				curPage: this.$router.currentRoute.path
 			}
 		},
+		watch: {
+	      '$route': 'changeRoute'
+	    },
 		methods: {
 			selectCurPage(curPage) {
 				this.curPage = curPage;
+			},
+			changeRoute() {
+				this.curPage = this.$router.currentRoute.path;
 			}
+		},
+		components: {
+			home
 		}
 	}
 </script>

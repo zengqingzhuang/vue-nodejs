@@ -18,16 +18,15 @@ Vue.use(VueResource);
 // 路由地址必须与文件路径一致，便于根据路由来查找文件
 const router = new VueRouter({
 	routes: [
-		{ path: '/', component: App },
-		{ path: '/orgnization/list', component: orgList },
-		{ path: '/orgnization/add', component: orgAdd },
-		{ path: '/order/list', component: orderList },
-		{ path: '/demo', component: demo }
+		{ path: '/', component: App, children: [
+			{ path: '/orgnization/list', component: orgList },
+			{ path: '/orgnization/add', component: orgAdd },
+			{ path: '/order/list', component: orderList },
+			{ path: '/demo', component: demo }
+		]}
 	]
 });
 
 new Vue({
-	router,
-	el: '#app',
-	render: (h) => h(App)
-});
+	router
+}).$mount('#app');
