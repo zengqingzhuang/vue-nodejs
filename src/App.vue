@@ -32,7 +32,9 @@
 					</keep-alive>
 				</template>
 				<template v-else>
-					<home></home>
+					<keep-alive>
+						<home></home>
+					</keep-alive>
 				</template>
 			</section>
 		</article>

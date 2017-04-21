@@ -1,6 +1,6 @@
 /**
  * @file log打日志
- * @author dazhuang(zengqingzhuang$baidu.com)
+ * @author dazhuang(zengqingzhuang@baidu.com)
  *
  */
 let log4js = require('log4js');
