@@ -1,7 +1,6 @@
 <template>
     <div>
         这里是新增页面
-        <demo></demo>
 	</div>
 </template>
 <script type="text/ecmascript-6">

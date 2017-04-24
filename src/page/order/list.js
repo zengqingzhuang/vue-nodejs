@@ -1,5 +1,3 @@
-import Vue from 'vue';
-import demo from 'components/demo';
 export default {
     data(){
         return {
@@ -15,6 +13,6 @@ export default {
         });
     },
     components: {
-        demo
+        
     }
 }

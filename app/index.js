@@ -1,4 +1,4 @@
-var express = require('express'),
+let express = require('express'),
 	app = express(),
 	path = require('path'),
 	_ = require('lodash'),
@@ -8,8 +8,10 @@ var express = require('express'),
 	log4js = require('log4js'),
 	config = require('../config'),
 	favicon = require('serve-favicon'),
-	webpackDevMiddleware = require("webpack-dev-middleware"),
-	webpack = require("webpack");
+	webpackDevMiddleware = require('webpack-dev-middleware'),
+	webpackHotMiddleware = require('webpack-hot-middleware'),
+	webpack = require('webpack'),
+	compiler = webpack(require('../build/webpack.base.conf'));
 
 //express的日志配置
 log4js.configure(config.log4js);
@@ -31,23 +33,22 @@ app.locals = {
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
 app.use(cookieParser());
 
-// webpack
-var webpackCompiler = webpack(require('../webpack.config'));
-app.use(webpackDevMiddleware(webpackCompiler, {
-	// options
+app.use(express.static(path.join(__dirname, '../public')));
+
+// webpack 配置
+app.use(webpackDevMiddleware(compiler, {
 	noInfo: true,
 	lazy: true
 }));
-var hotMiddleware = require('webpack-hot-middleware')(webpack(require('../webpack.config')));
-app.use(hotMiddleware);
+//app.use(webpackHotMiddleware(compiler));
 
 //同步递归加载所有的路由
 function readRouter(folderName) {
-	var folderDir = __dirname + '/' + folderName;
-	var fileArry = fs.readdirSync(folderDir);
+	let folderDir = __dirname + '/' + folderName;
+	let fileArry = fs.readdirSync(folderDir);
 	_.forEach(fileArry, function(file) {
 		if (/\.js/.test(file)) {
-			var file_path = folderDir + '/' + file,
+			let file_path = folderDir + '/' + file,
 				cur_file = fs.statSync(file_path);
 			if (cur_file.isDirectory()) { //是目录
 				readRouter(folderName + '/' + file);
@@ -60,7 +61,7 @@ function readRouter(folderName) {
 readRouter('routers');
 //next()错误处理 catch 404
 app.use(function(req, res, next) {
-	var err = {
+	let err = {
 		status: 404,
 		message: '接口异常'
 	};
@@ -77,7 +78,7 @@ app.use(function(err, req, res, next) {
 		err.status = err.status ? err.status : 500;
 		err.message = err.message ? err.message : '接口异常';
 	}
-	var format = req.url.match(/\.\w{1,5}/); //请求路由格式，.:format or 页面
+	let format = req.url.match(/\.\w{1,5}/); //请求路由格式，.:format or 页面
 	if (format) {
 		format = format[0].split(".")[1].toLowerCase();
 	}
@@ -85,7 +86,7 @@ app.use(function(err, req, res, next) {
 		res.status(err.status);
 		res.set('Content-Type', "application/json");
 		res[format](err);
-		log4js.getLogger().error('error:' + err.message);
+		log4js.getLogger('error').error('error:' + err.message);
 	}
 });
 module.exports = app;

@@ -9,8 +9,6 @@ import orgList from './page/orgnization/list.vue';
 import orgAdd from './page/orgnization/add.vue';
 // 订单列表页面
 import orderList from './page/order/list.vue';
-// demo页面
-import demo from './page/demo.vue';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -21,8 +19,7 @@ const router = new VueRouter({
 		{ path: '/', component: App, children: [
 			{ path: '/orgnization/list', component: orgList },
 			{ path: '/orgnization/add', component: orgAdd },
-			{ path: '/order/list', component: orderList },
-			{ path: '/demo', component: demo }
+			{ path: '/order/list', component: orderList }
 		]}
 	]
 });

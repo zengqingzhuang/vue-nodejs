@@ -1,5 +1,3 @@
-import Vue from 'vue';
-import demo from 'components/demo';
 export default {
 	data(){
 		return {
@@ -12,9 +10,10 @@ export default {
 			this.orgList = result.list;
 		}).catch((res) => {
 			alert('接口异常');
+			alert()
 		});
 	},
 	components: {
-        demo
+        
     }
 }

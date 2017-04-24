@@ -1,4 +1,3 @@
-import demo from 'components/demo';
 export default {
 	data() {
 		return {}
@@ -6,6 +5,6 @@ export default {
 	created() {
 	},
 	components: {
-		demo
+		
 	}
 }

@@ -7,7 +7,7 @@ module.exports = {
 	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, './dist'),
-		filename: '[chunkhash].[name].js'
+		filename: '[name].[chunkhash].js'
 	},
 	resolve: {
 		extensions: ['.vue', '.js', '.json', '.scss'],
@@ -21,8 +21,8 @@ module.exports = {
 			"node_modules"
 		]
 	},
-	resolveLoader: {
-
+	externals: {
+		//vue: 'vue'
 	},
 	module: {
 		rules: [{
@@ -50,11 +50,19 @@ module.exports = {
 			//   loader: 'vue-html-loader'
 			// },
 			{
-				test: /\.(png|jpg|gif|svg|woff|woff2|eot|ttf)$/,
+				test: /\.(png|jpg|gif)$/,
 				loader: 'url-loader',
 				query: {
 					limit: 10000,
-					name: '[name].[ext]?[hash]'
+					name: 'imgs/[name].[ext]?[hash]'
+				}
+			},
+			{
+				test: /\.(svg|woff|woff2|eot|ttf)$/,
+				loader: 'url-loader',
+				query: {
+					limit: 10000,
+					name: 'fonts/[name].[ext]?[hash]'
 				}
 			}
 		]
@@ -70,27 +78,41 @@ module.exports = {
 			template: 'index.html',
 			inject: true
 		}),
-		//线上配置
-		//new webpack.optimize.UglifyJsPlugin(),
-		// new webpack.optimize.CommonsChunkPlugin({ // 提取公共模块代码
-		// 	name: ['vendor', 'manifest']
-		// })
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor',
+			minChunks: function(module, count) {
+				// any required modules inside node_modules are extracted to vendor
+				return (
+					module.resource &&
+					/\.js$/.test(module.resource) &&
+					module.resource.indexOf(
+						path.join(__dirname, 'node_modules')
+					) === 0
+				)
+			}
+		}),
+		// extract webpack runtime and module manifest to its own file in order to
+		// prevent vendor hash from being updated whenever app bundle is updated
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'manifest',
+			chunks: ['vendor']
+		})
 	]
 }
 
 if (process.env.NODE_ENV === 'production') {
-	module.exports.devtool = '#eval-source-map';
+	//module.exports.devtool = '#eval-source-map';
+	module.exports.devtool = false;
 	module.exports.plugins = (module.exports.plugins || []).concat([
 		new webpack.DefinePlugin({
 			'process.env': {
-				NODE_ENV: '"production"'
+				NODE_ENV: 'production'
 			}
 		}),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false
 			}
-		}),
-		new webpack.optimize.OccurenceOrderPlugin()
+		})
 	])
 }
