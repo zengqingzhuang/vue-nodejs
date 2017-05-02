@@ -1,6 +1,7 @@
 let webpack = require('webpack');
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+//let ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 	//devtool: '#eval-source-map',
 	devtool: false,
@@ -37,10 +38,7 @@ module.exports = {
 				NODE_ENV: '"production"'
 			}
 		}),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
-		})
+		new webpack.optimize.UglifyJsPlugin(),
+		//new ExtractTextPlugin("styles.css")
 	]
 }

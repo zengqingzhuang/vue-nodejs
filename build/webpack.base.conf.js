@@ -3,7 +3,6 @@ let webpack = require('webpack');
 let merge = require('webpack-merge');
 let configParam = '';
 let NODE_ENV = process.env.NODE_ENV;
-//let ExtractTextPlugin = require('extract-text-webpack-plugin');
 if (NODE_ENV === 'development') {
 	configParam = require('./webpack.dev.conf');
 } else if (NODE_ENV === 'production') {
@@ -32,45 +31,47 @@ module.exports = merge({
 	},
 	module: {
 		rules: [{
-				test: /\.vue$/,
-				loader: 'vue-loader'
+			test: /\.vue$/,
+			loader: 'vue-loader'
+		}, {
+			test: /\.js$/,
+			loader: 'babel-loader',
+			exclude: /node_modules/,
+			query: {
+				compact: true
+			} //解决js文件大于100KB报错的问题
+		}, {
+			test: /\.scss$/,
+			use: [{
+				loader: "style-loader"
 			}, {
-				test: /\.js$/,
-				loader: 'babel-loader',
-				exclude: /node_modules/,
-				query: {
-					compact: true
-				} //解决js文件大于100KB报错的问题
+				loader: "css-loader"
 			}, {
-				test: /\.scss$/,
-				use: [{
-					loader: "style-loader"
-				}, {
-					loader: "css-loader"
-				}, {
-					loader: "sass-loader"
-				}]
-			},
-			{
-				test: /\.(png|jpg|gif)$/,
-				loader: 'url-loader',
-				query: {
-					limit: 10000,
-					name: 'imgs/[name].[ext]?[hash]'
-				}
-			},
-			{
-				test: /\.(svg|woff|woff2|eot|ttf)$/,
-				loader: 'url-loader',
-				query: {
-					limit: 10000,
-					name: 'fonts/[name].[ext]?[hash]'
-				}
+				loader: "sass-loader"
+			}]
+		}, {
+			test: /\.(png|jpg|gif)$/,
+			loader: 'url-loader',
+			query: {
+				limit: 10000,
+				name: 'imgs/[name].[ext]?[hash]'
 			}
-		]
+		}, {
+			test: /\.(svg|woff|woff2|eot|ttf)$/,
+			loader: 'url-loader',
+			query: {
+				limit: 10000,
+				name: 'fonts/[name].[ext]?[hash]'
+			}
+		}]
 	},
 	devServer: {
 		historyApiFallback: true,
 		noInfo: true
-	}
+	},
+	plugins: [
+		new webpack.BannerPlugin({
+			banner: 'Create Time ' + new Date()
+		})
+	]
 }, configParam);

@@ -5,10 +5,31 @@
     <title>edu-mis</title>
     <meta name="viewport" content="width=device-width,inital-scale=1.0,
     maximum-scale=1.0,user-scalable=no">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <!-- <link rel="shortcut icon" href="/lib/hAdmin/favicon.ico">  -->
+    <link href="/lib/hAdmin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/hAdmin/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/hAdmin/css/animate.css" rel="stylesheet">
+    <link href="/lib/hAdmin/css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
     <div id="app">
       <router-view></router-view>
     </div>
   </body>
+  <!-- 全局js -->
+    <script src="/lib/hAdmin/js/jquery.min.js"></script>
+    <script src="/lib/hAdmin/js/bootstrap.min.js"></script>
+    <script src="/lib/hAdmin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/lib/hAdmin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/lib/hAdmin/js/plugins/layer/layer.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src="/lib/hAdmin/js/hAdmin.js"></script>
+
+    <!-- 第三方插件 -->
+    <script src="/lib/hAdmin/js/plugins/pace/pace.min.js"></script>
 </html>

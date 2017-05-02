@@ -9,7 +9,7 @@ let express = require('express'),
 	config = require('../config'),
 	favicon = require('serve-favicon'),
 	webpackDevMiddleware = require('webpack-dev-middleware'),
-	webpackHotMiddleware = require('webpack-hot-middleware'),
+	//webpackHotMiddleware = require('webpack-hot-middleware'),
 	webpack = require('webpack'),
 	compiler = webpack(require('../build/webpack.base.conf'));
 

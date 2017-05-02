@@ -1,47 +1,79 @@
 <template>
-	<div>
-		<header>
-		    <div class="area">
-		        <h1 class="l">
-		            机构管理系统
-		        </h1>
-		    </div>
-		</header>
-		<article id="container" class="area clear">	
-			<aside class="left">
-			    <h3>机构管理</h3>
-			    <ul>
-			        <li>
-			            <a @click="selectCurPage('/orgnization/list')" :class="[curPage === '/orgnization/list' ? 'cur' : '']" href="/#/orgnization/list">机构列表</a>
-			        </li>
-			        <li>
-			            <a @click="selectCurPage('/orgnization/add')" :class="[curPage === '/orgnization/add' ? 'cur' : '']" href="/#/orgnization/add">新增机构</a>
-			        </li>
-			    </ul>
-			    <h3>订单管理</h3>
-			    <ul>
-			        <li>
-			            <a @click="selectCurPage('/order/list')" :class="[curPage === '/order/list' ? 'cur' : '']" href="/#/order/list">订单列表</a>
-			        </li>
-			    </ul>
-			</aside>
-			<section class="right">
-				<template v-if="curPage !== '/'">
-					<keep-alive>
-						<router-view></router-view>
-					</keep-alive>
-				</template>
-				<template v-else>
-					<keep-alive>
-						<home></home>
-					</keep-alive>
-				</template>
-			</section>
-		</article>
-		<footer>
-			此处可以写一些介绍
-		</footer>
-	</div>
+	<div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close"><i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs" style="font-size:20px;">
+                                        <i class="fa fa-area-chart"></i>
+                                        <strong class="font-bold">EDU</strong>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="logo-element">EDU
+                        </div>
+                    </li>
+                    <!-- <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        <span class="ng-scope">分类</span>
+                    </li> -->
+                    <li>
+                        <a class="J_menuItem" href="/#/">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">主页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa fa-bar-chart-o"></i>
+                            <span class="nav-label">机构管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="/#/orgnization/list">机构列表</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="/#/orgnization/add">新增机构</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-info " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+                            <div class="form-group">
+                                <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <template v-if="curPage !== '/'">
+				<keep-alive>
+					<router-view></router-view>
+				</keep-alive>
+			</template>
+			<template v-else>
+				<keep-alive>
+					<home></home>
+				</keep-alive>
+			</template>
+        </div>
+        <!--右侧部分结束-->
+    </div>
 </template>
 <script type="text/ecmascript-6">
 	import home from 'components/home';
@@ -68,7 +100,4 @@
 	}
 </script>
 <style lang="sass" rel="stylesheet/sass">
-	@import 'common/scss/pub';
-	@import 'common/scss/sidebar';
-	@import 'common/fonts/icon-font';
 </style>
