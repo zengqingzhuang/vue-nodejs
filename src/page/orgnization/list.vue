@@ -1,60 +1,58 @@
 <template>
-    <div class="wrapper wrapper-content animated fadeInRight">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>基本 <small>分类，查找</small></h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="table_data_tables.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">新增</a>
-                                </li>
-                                <li><a href="#">编辑</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
+    <div>
+        <ui-table
+            title='机构管理 / 列表'
+            :list='orgList'
+            :columns='columns'
+            @updateRow='updateRow'
+            @addRow='addRow'
+            @deleteRow='deleteRow'>
+        </ui-table>
+        <ui-dialog
+            :show='markDialog === 1 || markDialog === 2'>
+            <div slot="content" v-if="markDialog === 1">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="commentForm">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">姓名：</label>
+                            <div class="col-sm-8">
+                                <input v-model="selectedRow.name" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                            </div>
                         </div>
-                    </div>
-                    <div class="ibox-content">
-                        <table class="table table-striped table-bordered table-hover dataTables-example">
-                            <thead>
-                                <tr>
-                                    <th>序号</th>
-                                    <th>机构名称</th>
-                                    <th>创建时间</th>
-                                    <th>金额</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="gradeX" v-for='item in orgList'>
-                                    <td>{{ item.number }}</td>
-                                    <td>{{ item.name }}</td>
-                                    <td>{{ item.createTime }}
-                                    <td>{{ item.money }}</td>
-                                </tr>
-                            </tbody>
-                            <!-- <tfoot>
-                                <tr>
-                                    <th>渲染引擎</th>
-                                    <th>浏览器</th>
-                                    <th>平台</th>
-                                    <th>引擎版本</th>
-                                </tr>
-                            </tfoot> -->
-                        </table>
-
-                    </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">E-mail：</label>
+                            <div class="col-sm-8">
+                                <input v-model="selectedRow.createTime" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">网站：</label>
+                            <div class="col-sm-8">
+                                <input v-model="selectedRow.money" id="curl" type="url" class="form-control" name="url">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">说明：</label>
+                            <div class="col-sm-8">
+                                <textarea v-model="selectedRow.number" id="ccomment" name="comment" class="form-control" required="" aria-required="true"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" @click="closeDialog">取消</button>
+                    <button type="button" class="btn btn-primary" @click="btnSave">保存</button>
                 </div>
             </div>
-        </div>
+            <div slot="content" v-if="markDialog === 2">
+                <div class="modal-body">
+                    <p>确认删除?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @click="deleteCurRow">确定</button>
+                </div>
+            </div>
+        </ui-dialog>
     </div>
 </template>
 <script type="text/ecmascript-6">

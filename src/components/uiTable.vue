@@ -1,0 +1,127 @@
+<template>
+	<div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>{{ title }}</h5>
+                        <div class="ibox-tools" v-if="showAdd || showUpdate || showDelete">
+                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li v-if="showAdd"><a href="javascript:void(0)" @click="addRow">新增</a>
+                                </li>
+                                <li v-if="showUpdate"><a href="javascript:void(0)" @click="updateRow">编辑</a>
+                                </li>
+                                <li v-if="showDelete"><a href="javascript:void(0)" @click="deleteRow">删除</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-bordered" :class="[striped ? 'table-striped' : '' , hover ? 'table-hover' : '']">
+                            <thead>
+                                <tr>
+                                	<th v-for="value in columns">
+                                		{{ value }}
+                                	</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for='(row, index) in list' @click="onSelectRow(row, index)" :class="[index === selectIndex ? 'success' : '']">
+                                	<td v-for='value in row'>
+                                		{{ value }}
+                                	</td>
+                                </tr>
+                            </tbody>
+                            <tfoot v-if="foots.length > 0">
+                                <tr>
+                                	<th v-for="value in foots">
+                                		{{ value }}
+                                	</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<script type="text/ecmascript-6">
+	export default {
+		data() {
+			return {
+				selectedRow: '',
+				selectIndex: -1
+			}
+		},
+		props: {
+			title: { // 标题
+				type: String,
+				default: ''
+			},
+			columns: { // 列集合
+				type: Array,
+				default: function () {
+					return []
+				},
+				require: true
+			},
+			list: { // 数据集
+				type: Array,
+				default: function () {
+					return []
+				},
+				require: true
+			},
+			foots: { // 表尾
+				type: Array,
+				default: function () {
+					return []
+				}
+			},
+			striped: { // 是否奇偶行区分颜色
+				type: Boolean,
+				default: false
+			},
+			hover: { // 行hover颜色
+				type: Boolean,
+				default: true	
+			},
+			showAdd: { // 是否显示新增按钮
+				type: Boolean,
+				default: true
+			},
+			showUpdate: { // 是否显示编辑按钮
+				type: Boolean,
+				default: true
+			},
+			showDelete: { // 是否显示删除按钮
+				type: Boolean,
+				default: true
+			}
+		},
+		methods: {
+			addRow() { // 新增
+				this.$emit('addRow');
+			},
+			updateRow() { // 编辑
+				this.$emit('updateRow', this.selectedRow);
+			},
+			deleteRow() { // 删除
+				this.$emit('deleteRow', this.selectedRow);
+			},
+			onSelectRow(row, index) {
+				if (!Object.is(this.selectedRow, row)) {
+					this.selectedRow = row;
+					this.selectIndex = index;
+				}
+			}
+		}
+	}
+</script>
+<style lang="sass" scoped rel="stylesheet/sass">
+	
+</style>
