@@ -43,6 +43,12 @@
                                 </tr>
                             </tfoot>
                         </table>
+        				<ui-pagination
+        					:pageSize='pageSize'
+        					:pageNumber='pageNumber'
+        					:pageTotal='pageTotal'
+        					@queryList='queryList'>
+        				</ui-pagination>
                     </div>
                 </div>
             </div>
@@ -50,6 +56,24 @@
     </div>
 </template>
 <script type="text/ecmascript-6">
+	/**
+     * @file ui-dialog
+     * @author dazhuang(zengqingzhuang@baidu.com)
+     * @since 2017/5/3
+     */
+
+    /**
+     * @property {String} title 列表标题
+     * @property {Array} columns 列表表头
+     * @property {Array} list 数据集
+     * @property {Array} foots 表尾
+     * @property {Array} striped 是否奇偶行区分颜色
+     * @property {Array} hover 行hover颜色
+     * @property {Array} showAdd 是否显示新增按钮
+     * @property {Array} showUpdate 是否显示编辑按钮
+     * @property {Array} showDelete 是否显示删除按钮
+     */
+    import uiPagination from 'components/uiPagination';
 	export default {
 		data() {
 			return {
@@ -101,6 +125,18 @@
 			showDelete: { // 是否显示删除按钮
 				type: Boolean,
 				default: true
+			},
+			pageSize: { // 每页大小
+				type: Number,
+				default: 20
+			},
+			pageNumber: { // 当前页码
+				type: Number,
+				default: 0
+			},
+			pageTotal: { // 总页数
+				type: Number,
+				default: 0
 			}
 		},
 		methods: {
@@ -118,7 +154,13 @@
 					this.selectedRow = row;
 					this.selectIndex = index;
 				}
+			},
+			queryList(page) {
+				this.$emit('queryList', page)
 			}
+		},
+		components: {
+			uiPagination
 		}
 	}
 </script>

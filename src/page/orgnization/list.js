@@ -5,19 +5,27 @@ export default {
 		return {
 			selectedRow: {},
 			markDialog: 0, // 1-编辑弹窗 2-删除弹窗
+			pageSize: 2,
+			pageNumber: 0,
+			pageTotal: 0,
 			orgList: [],
 			columns: ['序号', '机构名称', '创建时间', '金额']
 		}
 	},
 	created() {
-		this.$http.get('/organization/list.json', {}).then((res) => {
-			let result = res.data.data || {};
-			this.orgList = result.list;
-		}).catch((res) => {
-			alert('接口异常');
-		});
+		this.queryList1();
 	},
 	methods: {
+		queryList1(page) {
+			this.$http.get('/organization/list.json', {}).then((res) => {
+				let result = res.data.data || {};
+				this.orgList = result.list;
+				this.pageNumber = +page || 1;
+				this.pageTotal = this.orgList.length;
+			}).catch((res) => {
+				alert('接口异常');
+			});
+		},
 		/**
 		 * 新增
 		 */
@@ -49,6 +57,15 @@ export default {
 		 */
 		btnSave() {
 			console.log(this.selectedRow)
+		},
+		/**
+		 * 删除当前行
+		 */
+		deleteCurRow() {
+			this.closeDialog();
+		},
+		queryList(page) {
+			this.queryList1(page);
 		}
 	},
 	components: {

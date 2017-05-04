@@ -4,9 +4,13 @@
             title='机构管理 / 列表'
             :list='orgList'
             :columns='columns'
+            :pageSize='pageSize'
+            :pageNumber='pageNumber'
+            :pageTotal='pageTotal'
             @updateRow='updateRow'
             @addRow='addRow'
-            @deleteRow='deleteRow'>
+            @deleteRow='deleteRow'
+            @queryList='queryList'>
         </ui-table>
         <ui-dialog
             :show='markDialog === 1 || markDialog === 2'>
