@@ -21,7 +21,7 @@ export default {
 				let result = res.data.data || {};
 				this.orgList = result.list;
 				this.pageNumber = +page || 1;
-				this.pageTotal = this.orgList.length;
+				this.pageTotal = 100;
 			}).catch((res) => {
 				alert('接口异常');
 			});

@@ -12,6 +12,11 @@
      * @property {Number} pageSize 每页大小
      * @property {Number} pageNumber 当前页码
      * @property {Number} pageTotal 总页数
+     * @property {Number} viewStep 中心页码前后范围步数
+     * @property {Number} pageNumMax 最大显示页数，如果值为0或者false，那么不限制最大页码
+     * @property {Number} pages 总页码，如果此字段存在，那么pageTotal失效
+     * @property {Boolean} showOneBar 如果只有一页，是否显示，默认不显示
+     * @property {Array} showItems 可显示的配置项，默认显示["prev", "no_prev", "next", "no_next", "page", "cu_page", "abbr"]也就是["total", "gopage"]是可配置的
      */
     export default {
     	data() {
@@ -20,35 +25,35 @@
     		}
     	},
     	props: {
-    		pageSize: { // 每页大小
+    		pageSize: {
 				type: Number,
 				default: 20
 			},
-			pageNumber: { // 当前页码
+			pageNumber: {
 				type: Number,
 				default: 0
 			},
-			pageTotal: { // 总页数
+			pageTotal: {
 				type: Number,
 				default: 0
 			},
-			viewStep: { // 中心页码前后范围步数
+			viewStep: {
 				type: Number,
 				default: 1
 			},
-			pageNumMax: { // 最大显示页数，如果值为0或者false，那么不限制最大页码
+			pageNumMax: {
 				type: Number,
 				default: 99
 			},
-			pages: { //总页码，如果此字段存在，那么pageTotal失效
+			pages: {
 				type: Number,
 				default: 0
 			},
-			showOneBar: { //如果只有一页，是否显示，默认不显示
+			showOneBar: {
 				type: Boolean,
 				default: false
 			},
-			showItems: { //可显示的配置项，默认显示["prev", "no_prev", "next", "no_next", "page", "cu_page", "abbr"]也就是["total", "gopage"]是可配置的
+			showItems: {
 				type: Array,
 				default: function() {
 					return ["total", "gopage"]
@@ -106,9 +111,7 @@
 			        pages = max;
 			    }
 
-			    let html = [],
-			        pagePrev = "",
-			        pageNext = "";
+			    let html = [];
 
 			    // 显示模板
 			    let tpl = {
@@ -141,10 +144,10 @@
 			        }
 			    }
 
-			    // 上页
-			    html.push(current === 1? tpl.no_prev(): tpl.prev(current - 1));
-			    // 首页
-			    html.push(current === 1? tpl.cu_page(1): tpl.page(1));
+			    // 上一页
+			    html.push(current === 1 ? tpl.no_prev() : tpl.prev(current - 1));
+			    // 第一页
+			    html.push(current === 1 ? tpl.cu_page(1) : tpl.page(1));
 
 			    // 是否需要缩略显示
 			    if (pages > 1 + boat.size) {
@@ -168,24 +171,25 @@
 
 			        // 浮动页码
 			        for (let p = boat.start; p <= boat.end; p++) {
-			            html.push(current === p? tpl.cu_page(p): tpl.page(p));
+			            html.push(current === p ? tpl.cu_page(p) : tpl.page(p));
 			        }
 
 			        // 后置缩略
 			        if (boat.end + 1 <= pages) {
 			            html.push(tpl.abbr());
+			            html.push(tpl.page(pages));
 			        }
 			    }
 			    // 不需要缩略
 			    else{
 			        // 页码
 			        for(let p = 2; p <= pages; p++){
-			            html.push(current === p? tpl.cu_page(p): tpl.page(p));
+			            html.push(current === p ? tpl.cu_page(p) : tpl.page(p));
 			        }
 			    }
 
-			    // 下页
-			    html.push(current + 1 > pages? tpl.no_next(): tpl.next(current + 1));
+			    // 下一页
+			    html.push(current + 1 > pages ? tpl.no_next() : tpl.next(current + 1));
 
 			    if (showItems.indexOf("total") > -1) {
 			        html.push(tpl.total(pages));
