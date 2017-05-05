@@ -175,9 +175,13 @@
 			        }
 
 			        // 后置缩略
+			        if (boat.start + boat.size < pages) {
+		            	html.push(tpl.abbr());
+		            }
 			        if (boat.end + 1 <= pages) {
-			            html.push(tpl.abbr());
+			            
 			            html.push(tpl.page(pages));
+
 			        }
 			    }
 			    // 不需要缩略
