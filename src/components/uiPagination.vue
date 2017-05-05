@@ -63,6 +63,13 @@
     			this.createPage();	
     		}
     	},
+    	mounted() {
+    		document.getElementById('uiPagination').onclick = (event) => {
+    			if (event.target.tagName === 'A') {
+    				this.clickPage(event.target.getAttribute('page') || document.getElementById('iptNum').value);
+    			}
+    		}
+    	},
     	methods: {
     		createPage() {
     			let current = parseInt(this.pageNumber), // 当前页码
@@ -105,20 +112,20 @@
 
 			    // 显示模板
 			    let tpl = {
-			        prev: function(num){
-			            return '<a class="np-page query-list" href="javascript:void(0)" page="' + num + '">上一页</a> ';
+			        prev: function(num) {
+			            return '<a class="np-page" href="javascript:void(0)" page="' + num + '">上一页</a> ';
 			        },
-			        no_prev: function(){
+			        no_prev: function() {
 			            return '<span class="selected">上一页</span> ';
 			        },
-			        next: function(num){
-			            return '<a class="np-page query-list" href="javascript:void(0)" page="' + num + '">下一页</a> ';
+			        next: function(num) {
+			            return '<a class="np-page" href="javascript:void(0)" page="' + num + '">下一页</a> ';
 			        },
-			        no_next: function(){
+			        no_next: function() {
 			            return '<span class="selected">下一页</span> ';
 			        },
-			        page: function(num){
-			            return '<a class="query-list" href="javascript:void(0)" page="' + num + '">' + num + '</a> ';
+			        page: function(num) {
+			            return '<a href="javascript:void(0)" page="' + num + '">' + num + '</a> ';
 			        },
 			        cu_page: function(num) {
 			            return '<span>' + num + '</span> ';
@@ -130,7 +137,7 @@
 			            return '共' + total + '页，';
 			        },
 			        gopage: function(num) {
-			            return '到第<input type="text" class="text" value="' + num + '">页<a href="javascript:void(0)">确定</a> ';
+			            return '到第<input id="iptNum" type="text" class="text" value="' + num + '">页<a href="javascript:void(0)">确定</a> ';
 			        }
 			    }
 
@@ -145,31 +152,29 @@
 			        boat.end = current + boat.step;
 
 			        // 浮动页面起始位置修正
-			        if(boat.start < 2){
+			        if (boat.start < 2) {
 			            boat.start = 2;
 			            boat.end = 2 + boat.step * 2;
 			        }
-			        else if(boat.end > pages){
+			        else if (boat.end > pages) {
 			            boat.end = pages;
 			            boat.start = pages - boat.step * 2;
 			        }
 
 			        // 前置缩略
-			        if(boat.start - 1 > 1 ){
+			        if (boat.start - 1 > 1 ) {
 			            html.push(tpl.abbr());
 			        }
 
 			        // 浮动页码
-			        for(let p = boat.start; p <= boat.end; p++){
+			        for (let p = boat.start; p <= boat.end; p++) {
 			            html.push(current === p? tpl.cu_page(p): tpl.page(p));
 			        }
 
 			        // 后置缩略
-			        if(boat.end + 1 <= pages){
+			        if (boat.end + 1 <= pages) {
 			            html.push(tpl.abbr());
 			        }
-
-
 			    }
 			    // 不需要缩略
 			    else{
@@ -191,14 +196,6 @@
 
 			    // 输出
 			    this.pageHtml = html.join('');
-			    setTimeout(() => {
-			    	let alist = document.getElementById('uiPagination').querySelectorAll('.query-list');
-			    	alist.forEach((item, index) => {
-			    		item.onclick = () => {
-			    			this.clickPage(item.getAttribute('page'));
-			    		}
-			    	});
-			    }, 0)
     		},
     		clickPage(page) {
     			this.$emit('queryList', page);
