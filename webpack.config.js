@@ -26,46 +26,50 @@ module.exports = {
 	},
 	module: {
 		rules: [{
-				test: /\.vue$/,
-				loader: 'vue-loader'
+			test: /\.vue$/,
+			loader: 'vue-loader'
+		}, {
+			test: /\.js$/,
+			loader: 'babel-loader',
+			exclude: /node_modules/,
+			query: {
+				compact: true
+			} //解决js文件大于100KB报错的问题
+		}, {
+			test: /\.css$/,
+			use: [{
+				loader: "css-loader"
 			}, {
-				test: /\.js$/,
-				loader: 'babel-loader',
-				exclude: /node_modules/,
-				query: {
-					compact: true
-				} //解决js文件大于100KB报错的问题
+				loader: "style-loader"
 			}, {
-				test: /\.scss$/,
-				use: [{
-					loader: "style-loader"
-				}, {
-					loader: "css-loader"
-				}, {
-					loader: "sass-loader"
-				}]
-			},
-			// {
-			//   test: /\.html$/,
-			//   loader: 'vue-html-loader'
-			// },
-			{
-				test: /\.(png|jpg|gif)$/,
-				loader: 'url-loader',
-				query: {
-					limit: 10000,
-					name: 'imgs/[name].[ext]?[hash]'
-				}
-			},
-			{
-				test: /\.(svg|woff|woff2|eot|ttf)$/,
-				loader: 'url-loader',
-				query: {
-					limit: 10000,
-					name: 'fonts/[name].[ext]?[hash]'
-				}
+				loader: "postcss-loader"
+			}]
+		}, {
+			test: /\.scss$/,
+			use: [{
+				loader: "css-loader"
+			}, {
+				loader: "style-loader"
+			}, {
+				loader: "postcss-loader"
+			}, {
+				loader: "sass-loader"
+			}]
+		}, {
+			test: /\.(png|jpg|gif)$/,
+			loader: 'url-loader',
+			query: {
+				limit: 10000,
+				name: 'imgs/[name].[ext]?[hash]'
 			}
-		]
+		}, {
+			test: /\.(svg|woff|woff2|eot|ttf)$/,
+			loader: 'url-loader',
+			query: {
+				limit: 10000,
+				name: 'fonts/[name].[ext]?[hash]'
+			}
+		}]
 	},
 	devServer: {
 		historyApiFallback: true,
@@ -96,7 +100,8 @@ module.exports = {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'manifest',
 			chunks: ['vendor']
-		})
+		}),
+		require('autoprefixer')
 	]
 }
 

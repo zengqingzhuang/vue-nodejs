@@ -1,6 +1,7 @@
 let path = require('path');
 let webpack = require('webpack');
 let merge = require('webpack-merge');
+let px2rem = require('postcss-px2rem')
 let configParam = '';
 let NODE_ENV = process.env.NODE_ENV;
 if (NODE_ENV === 'development') {
@@ -41,11 +42,22 @@ module.exports = merge({
 				compact: true
 			} //解决js文件大于100KB报错的问题
 		}, {
-			test: /\.scss$/,
+			test: /\.css$/,
 			use: [{
+				loader: "css-loader"
+			}, {
 				loader: "style-loader"
 			}, {
+				loader: "postcss-loader"
+			}]
+		}, {
+			test: /\.scss$/,
+			use: [{
 				loader: "css-loader"
+			}, {
+				loader: "style-loader"
+			}, {
+				loader: "postcss-loader"
 			}, {
 				loader: "sass-loader"
 			}]
@@ -72,6 +84,12 @@ module.exports = merge({
 	plugins: [
 		new webpack.BannerPlugin({
 			banner: 'Create Time ' + new Date()
-		})
+		}),
+		new webpack.LoaderOptionsPlugin({
+         test: /\.scss$/, // may apply this only for some modules
+         options: {
+           postcss: [px2rem({remUnit: 75})]
+         }
+       })
 	]
 }, configParam);
