@@ -69,12 +69,10 @@
         top: 45%;
         left: 50%;
         transform: translate(-50%, -45%);
-        -webkit-transform: translate(-50%, -45%);
         border-radius: 4px;
     }
     .fade-in {
         animation: fade .5s;
-        -webkit-animation: fade .5s;
     }
     @keyframes fade {
         0% {
