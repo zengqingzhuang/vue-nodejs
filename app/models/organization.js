@@ -16,42 +16,62 @@ class orgModel {
 		http.get()
 			.then((ret) => {
 				let data = {
-					people: 100,
+					total: 50,
 					list: [{
-						number: 1,
-						name: '时尚',
-						createTime: '2015-03-06 10:58',
-						money: 10000000
-					}, {
-						number: 2,
+						corpid: 'zhangmen',
 						name: '掌门',
+						signKey: '4x1tHXuV9j',
+						signAddress: 'www.baidu.com',
+						shNumber: '1',
 						createTime: '2015-03-06 10:58',
-						money: 10000000
+						updateTime: '2016-03-06 10:58',
+						startTime: '2015-03-06 10:58',
+						stopTime: '2015-03-06 10:58',
+						state: '已开启'
 					}, {
-						number: 3,
-						name: '火箭',
-						createTime: '2017-04-06 10:58',
-						money: 23423423
+						corpid: 'vipabc',
+						name: 'vipabc',
+						signKey: 'nUwWoK24pH',
+						signAddress: 'www.baidu.com',
+						shNumber: '2',
+						createTime: '2015-03-06 10:58',
+						updateTime: '2016-03-06 10:58',
+						startTime: '2015-03-06 10:58',
+						stopTime: '',
+						state: '已开启'
 					}, {
-						number: 4,
-						name: '火箭',
-						createTime: '2017-04-06 10:58',
-						money: 23423423
+						corpid: 'beifeng',
+						name: '北风',
+						signKey: 'NdmTX6VnWk',
+						signAddress: 'www.baidu.com',
+						shNumber: '3',
+						createTime: '2015-03-06 10:58',
+						updateTime: '2016-03-06 10:58',
+						startTime: '2015-03-06 10:58',
+						stopTime: '',
+						state: '已停用'
 					}, {
-						number: 5,
-						name: '火箭',
-						createTime: '2017-04-06 10:58',
-						money: 23423423
+						corpid: 'zhangmen',
+						name: '掌门',
+						signKey: 'TKoirNdf0A',
+						signAddress: 'www.baidu.com',
+						shNumber: '4',
+						createTime: '2015-03-06 10:58',
+						updateTime: '2016-03-06 10:58',
+						startTime: '2015-03-06 10:58',
+						stopTime: '2015-03-06 10:58',
+						state: '已停用'
 					}, {
-						number: 6,
-						name: '火箭',
-						createTime: '2017-04-06 10:58',
-						money: 23423423
-					}, {
-						number: 7,
-						name: '火箭',
-						createTime: '2017-04-06 10:58',
-						money: 23423423
+						corpid: 'zhangmen',
+						name: '掌门',
+						signKey: 'qCYYp0CMV8',
+						signAddress: 'www.baidu.com',
+						shNumber: '5',
+						createTime: '2015-03-06 10:58',
+						updateTime: '2016-03-06 10:58',
+						startTime: '2015-03-06 10:58',
+						stopTime: '2015-03-06 10:58',
+						state: '已开启'
 					}]
 				}
 				callback(null, data);

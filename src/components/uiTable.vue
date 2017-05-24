@@ -1,11 +1,16 @@
 <template>
 	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="btns" v-if="showAdd || showUpdate || showDelete">
+			<button v-if="showAdd" class="btn btn-primary" type="button" @click="addRow"><i class="fa fa-check"></i> 新增</button>
+			<button v-if="showUpdate" class="btn btn-info" type="button" @click="updateRow"><i class="fa fa-paste"></i> 编辑</button>
+			<button v-if="showDelete" class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-warning"></i> 删除</button>
+		</div>
         <div class="row">
             <div class="col-sm-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>{{ title }}</h5>
-                        <div class="ibox-tools" v-if="showAdd || showUpdate || showDelete">
+                        <!-- <div class="ibox-tools" v-if="showAdd || showUpdate || showDelete">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-wrench"></i>
                             </a>
@@ -17,7 +22,7 @@
                                 <li v-if="showDelete"><a href="javascript:void(0)" @click="deleteRow">删除</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="ibox-content">
                         <table class="table table-bordered" :class="[striped ? 'table-striped' : '' , hover ? 'table-hover' : '']">
@@ -165,5 +170,7 @@
 	}
 </script>
 <style lang="sass" scoped rel="stylesheet/sass">
-	
+	.btns {
+		margin-bottom: 15px;
+	}
 </style>

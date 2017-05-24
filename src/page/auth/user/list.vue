@@ -1,8 +1,8 @@
 <template>
     <div>
         <ui-table
-            title='机构管理 / 列表'
-            :list='orgList'
+            title='权限管理 / 用户列表'
+            :list='userList'
             :columns='columns'
             :pageSize='pageSize'
             :pageNumber='pageNumber'
@@ -18,41 +18,39 @@
                 <div class="ibox-content">
                     <form class="form-horizontal m-t" id="commentForm">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">corpid:</label>
+                            <label class="col-sm-3 control-label">账号名称:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.corpid" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                                <input v-model="selectedRow.accountName" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">机构名称:</label>
+                            <label class="col-sm-3 control-label">姓名:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.name" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
+                                <input v-model="selectedRow.Name" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">signKey:</label>
+                            <label class="col-sm-3 control-label">手机号:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.signKey" id="curl" type="url" class="form-control" name="url">
+                                <input v-model="selectedRow.Mobile" id="curl" type="url" class="form-control" name="url">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">签名地址:</label>
+                            <label class="col-sm-3 control-label">邮箱:</label>
                             <div class="col-sm-8">
-                                <textarea v-model="selectedRow.signAddress" id="ccomment" name="comment" class="form-control" required="" aria-required="true"></textarea>
+                               <input v-model="selectedRow.Email" id="curl" type="url" class="form-control" name="url">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">商户号:</label>
+                            <label class="col-sm-3 control-label">角色:</label>
                             <div class="col-sm-8">
-                                <textarea v-model="selectedRow.shNumber" id="ccomment" name="comment" class="form-control" required="" aria-required="true"></textarea>
+                                <select class="form-control m-b" name="account">
+                                    <option>RD</option>
+                                    <option>QA</option>
+                                    <option>PM</option>
+                                    <option>OP</option>
+                                </select>
                             </div>
-                        </div>
-                        <div class="radio">
-                            <label class="col-sm-3 control-label">状态:</label>
-                            <label>
-                                <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">开启</label>
-                            <label>
-                                <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">关闭</label>
                         </div>
                     </form>
                 </div>

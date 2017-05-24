@@ -1,8 +1,8 @@
 <template>
     <div>
         <ui-table
-            title='机构管理 / 列表'
-            :list='orgList'
+            title='通知地址管理 / 列表'
+            :list='addressList'
             :columns='columns'
             :pageSize='pageSize'
             :pageNumber='pageNumber'
@@ -24,35 +24,26 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">机构名称:</label>
+                            <label class="col-sm-3 control-label">通知地址:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.name" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
+                                <input v-model="selectedRow.address" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">signKey:</label>
+                            <label class="col-sm-3 control-label">参数分类:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.signKey" id="curl" type="url" class="form-control" name="url">
+                                <select class="form-control m-b" name="account">
+                                    <option>A分类</option>
+                                    <option>B分类</option>
+                                    <option>C分类</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">签名地址:</label>
+                            <label class="col-sm-3 control-label">推送参数:</label>
                             <div class="col-sm-8">
-                                <textarea v-model="selectedRow.signAddress" id="ccomment" name="comment" class="form-control" required="" aria-required="true"></textarea>
+                                <label class="col-sm-3 control-label">state,money</label>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">商户号:</label>
-                            <div class="col-sm-8">
-                                <textarea v-model="selectedRow.shNumber" id="ccomment" name="comment" class="form-control" required="" aria-required="true"></textarea>
-                            </div>
-                        </div>
-                        <div class="radio">
-                            <label class="col-sm-3 control-label">状态:</label>
-                            <label>
-                                <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">开启</label>
-                            <label>
-                                <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">关闭</label>
                         </div>
                     </form>
                 </div>

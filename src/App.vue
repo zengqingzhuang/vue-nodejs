@@ -31,7 +31,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa fa-bar-chart-o"></i>
+                            <i class="fa fa-table"></i>
                             <span class="nav-label">机构管理</span>
                             <span class="fa arrow"></span>
                         </a>
@@ -39,8 +39,89 @@
                             <li>
                                 <a class="J_menuItem" href="/#/orgnization/list">机构列表</a>
                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-table"></i>
+                            <span class="nav-label">通知地址管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="/#/orgnization/add">新增机构</a>
+                                <a class="J_menuItem" href="/#/address/list">列表</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-table"></i>
+                            <span class="nav-label">推送参数管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="/#/params/list">列表</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="/#/params/add">新增</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="/#/params/edit">编辑</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-edit"></i>
+                            <span class="nav-label">同步订单</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="/#/getOrder">同步订单</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-table"></i>
+                            <span class="nav-label">用户信息查询</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="/#/user/list">列表</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a href="#">
+                            <i class="fa fa-cutlery"></i>
+                            <span class="nav-label">日志查询</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="/#/orgnization/list">列表</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-cutlery"></i>
+                            <span class="nav-label">权限管理</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="/#/auth/userList">用户列表</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="/#/auth/roleList">角色列表</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="/#/auth/list">权限分配</a>
                             </li>
                         </ul>
                     </li>

@@ -8,23 +8,37 @@ export default {
 			pageSize: 5,
 			pageNumber: 0,
 			pageTotal: 0,
-			orgList: [],
-			columns: ['corpId', '机构名称', 'signKey', '签名地址', '商户号', '创建时间', '修改时间', '开启时间', '停用时间', '状态']
+			roleList: [],
+			columns: ['ID', '角色编码', '角色名称']
 		}
 	},
 	created() {
-		this.queryList1(1);
+		this.queryList();
 	},
 	methods: {
-		queryList1(page) {
-			this.$http.get('/organization/list.json', {}).then((res) => {
-				let result = res.data.data || {};
-				this.orgList = result.list;
-				this.pageNumber = page;
-				this.pageTotal = result.total;
-			}).catch((res) => {
-				alert('接口异常');
-			});
+		queryList() {
+			this.roleList = [
+				{
+					ID: 1,
+					Code: 'RD',
+					Name: '研发工程师'
+				},
+				{
+					ID: 2,
+					Code: 'QA',
+					Name: '测试工程师'
+				},
+				{
+					ID: 3,
+					Code: 'PM',
+					Name: '产品经理'
+				},
+				{
+					ID: 4,
+					Code: 'OP',
+					Name: '运维工程师'
+				}
+			]
 		},
 		/**
 		 * 新增
@@ -64,9 +78,6 @@ export default {
 		 */
 		deleteCurRow() {
 			this.closeDialog();
-		},
-		queryList(page) {
-			this.queryList1(page);
 		}
 	},
 	components: {

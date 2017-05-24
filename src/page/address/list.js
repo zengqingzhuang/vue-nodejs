@@ -8,8 +8,8 @@ export default {
 			pageSize: 5,
 			pageNumber: 0,
 			pageTotal: 0,
-			orgList: [],
-			columns: ['corpId', '机构名称', 'signKey', '签名地址', '商户号', '创建时间', '修改时间', '开启时间', '停用时间', '状态']
+			addressList: [],
+			columns: ['corpId', '通知地址', '推送参数']
 		}
 	},
 	created() {
@@ -17,9 +17,9 @@ export default {
 	},
 	methods: {
 		queryList1(page) {
-			this.$http.get('/organization/list.json', {}).then((res) => {
+			this.$http.get('/address/list.json', {}).then((res) => {
 				let result = res.data.data || {};
-				this.orgList = result.list;
+				this.addressList = result.list;
 				this.pageNumber = page;
 				this.pageTotal = result.total;
 			}).catch((res) => {

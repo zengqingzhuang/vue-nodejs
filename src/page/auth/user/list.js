@@ -8,23 +8,33 @@ export default {
 			pageSize: 5,
 			pageNumber: 0,
 			pageTotal: 0,
-			orgList: [],
-			columns: ['corpId', '机构名称', 'signKey', '签名地址', '商户号', '创建时间', '修改时间', '开启时间', '停用时间', '状态']
+			userList: [],
+			columns: ['ID', '账号名称', '姓名', '手机号', '邮箱', '角色']
 		}
 	},
 	created() {
-		this.queryList1(1);
+		this.queryList();
 	},
 	methods: {
-		queryList1(page) {
-			this.$http.get('/organization/list.json', {}).then((res) => {
-				let result = res.data.data || {};
-				this.orgList = result.list;
-				this.pageNumber = page;
-				this.pageTotal = result.total;
-			}).catch((res) => {
-				alert('接口异常');
-			});
+		queryList() {
+			this.userList = [
+				{
+					ID: 1,
+					accountName: 'zhangsan',
+					Name: '张三',
+					Mobile: '13999999999',
+					Email: 'zhangsan@baidu.com',
+					Role: 'RD'
+				},
+				{
+					ID: 2,
+					accountName: 'lisi',
+					Name: '李四',
+					Mobile: '13888888888',
+					Email: 'lisi@baidu.com',
+					Role: 'QA'
+				}
+			]
 		},
 		/**
 		 * 新增
@@ -64,9 +74,6 @@ export default {
 		 */
 		deleteCurRow() {
 			this.closeDialog();
-		},
-		queryList(page) {
-			this.queryList1(page);
 		}
 	},
 	components: {

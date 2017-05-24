@@ -4,12 +4,12 @@ export default {
 	data() {
 		return {
 			selectedRow: {},
-			markDialog: 0, // 1-编辑弹窗 2-删除弹窗
+			markDialog: 0, // 1-删除弹窗
 			pageSize: 5,
 			pageNumber: 0,
 			pageTotal: 0,
-			orgList: [],
-			columns: ['corpId', '机构名称', 'signKey', '签名地址', '商户号', '创建时间', '修改时间', '开启时间', '停用时间', '状态']
+			paramsList: [],
+			columns: ['分类', '推送参数']
 		}
 	},
 	created() {
@@ -17,9 +17,9 @@ export default {
 	},
 	methods: {
 		queryList1(page) {
-			this.$http.get('/organization/list.json', {}).then((res) => {
+			this.$http.get('/params/list.json', {}).then((res) => {
 				let result = res.data.data || {};
-				this.orgList = result.list;
+				this.paramsList = result.list;
 				this.pageNumber = page;
 				this.pageTotal = result.total;
 			}).catch((res) => {
@@ -30,34 +30,20 @@ export default {
 		 * 新增
 		 */
 		addRow() {
-			this.selectedRow = {};
-			this.markDialog = 1;
+			location.href = '/#/params/add';
 		},
 		/**
 		 * 编辑
 		 */
 		updateRow(row) {
 			if (!row) return;
-			Object.assign(this.selectedRow, row);
-			this.markDialog = 1;
+			location.href = '/#/params/edit?id=' + 1;
 		},
 		/**
 		 * 删除
 		 */
 		deleteRow(row) {
-			this.markDialog = 2;
-		},
-		/**
-		 * 关闭弹窗
-		 */
-		closeDialog() {
-			this.markDialog = 0;
-		},
-		/**
-		 * 保存
-		 */
-		btnSave() {
-			console.log(this.selectedRow)
+			this.markDialog = 1;
 		},
 		/**
 		 * 删除当前行
