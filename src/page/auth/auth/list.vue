@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper wrapper-content row">
+    <div class="wrapper wrapper-content animated fadeInRight row">
         <div class="wrapper">
             <select class="form-control m-b select-role" name="account">
                 <option>RD</option>

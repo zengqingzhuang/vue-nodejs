@@ -8,7 +8,7 @@ export default {
 			pageNumber: 0,
 			pageTotal: 0,
 			userList: [],
-			columns: ['BID', '手机号', '姓名']
+			columns: ['BID', '手机号', '姓名', '邮箱']
 		}
 	},
 	methods: {
@@ -17,7 +17,8 @@ export default {
 				{
 					BID: '1111',
 					Mobile: '13888888888',
-					Name: '张三'
+					Name: '张三',
+					Email: '222222@qq.com'
 				}
 			]
 		}
