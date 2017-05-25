@@ -16,6 +16,7 @@ export default {
 		queryDetail() {
 			this.selectedRow = {
 				corpid: 'zhangmen',
+				crmcorpid: 'zhangmen',
 				name: '掌门',
 				signKey: 'asdfas223d',
 				signAddress: 'www.baidu.com',
@@ -41,10 +42,6 @@ export default {
 		},
 		closeDialog() {
 			this.markDialog = 0;	
-		},
-		redirect() {
-			this.markDialog = 0;
-			window.open('http://www.baidu.com');
 		}
 	},
 	components: {

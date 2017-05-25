@@ -3,9 +3,15 @@
         <div class="wrapper wrapper-content animated fadeInRight">
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">corpid:</label>
+                    <label class="col-sm-3 control-label">分配corpid:</label>
                     <div class="col-sm-3">
                         <input v-model="selectedRow.corpid" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">crm-corpid:</label>
+                    <div class="col-sm-3">
+                        <input v-model="selectedRow.crmcorpid" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
@@ -35,31 +41,36 @@
                 <div class="form-group radio">
                     <label class="col-sm-3 control-label">状态:</label>
                     <label>
-                        <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">开启</label>
+                        <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios">开启</label>
                     <label>
-                        <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">停用</label>
+                        <input type="radio" checked="" value="option2" id="optionsRadios2" name="optionsRadios">停用</label>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">通知地址:</label>
-                    <div class="col-sm-7 address">
-                        <div class="row" v-for="item in addressList">
-                            <div class="col-md-5">
-                                <input v-model="item.address" id="curl" type="url" class="form-control" name="url">
-                            </div>
-                            <div class="col-md-2">
-                                <select class="form-control col-md-3" name="account">
-                                    <option>A分类</option>
-                                    <option>B分类</option>
-                                    <option>C分类</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="col-sm-3">
+                        <input  id="curl" type="url" class="form-control" name="url">
                     </div>
+                </div>
+                <div class="form-group" v-for="item in addressList">
+                    <label class="col-sm-3 control-label"></label>
+                    <div class="col-sm-3 address">
+                        <input v-model="item.address" id="curl" type="url" class="form-control" name="url">
+                    </div>    
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label"></label>
                     <div class="col-sm-8">
                         <button type="button" @click='addSendAddress' class="btn btn-default btn-sm rounded"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">推送参数:</label>
+                    <div class="col-sm-1">
+                        <select class="form-control col-md-3" name="account">
+                            <option>A分类</option>
+                            <option>B分类</option>
+                            <option>C分类</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -72,11 +83,10 @@
             :show='markDialog === 1'>
             <div slot="content">
                 <div class="modal-body">
-                    <p>同步订单成功！</p>
+                    <p>保存成功！</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-white" @click="closeDialog">取消</button>
-                    <button type="button" class="btn btn-primary" @click="redirect()">进入扫码页</button>
+                    <button type="button" class="btn btn-primary" @click="closeDialog()">确定</button>
                 </div>
             </div>
         </ui-dialog>
@@ -87,10 +97,7 @@
     export default add;
 </script>
 <style lang="sass" scoped rel="stylesheet/sass">
-    .address .row {
+    .address {
         margin-top: 10px;
-    }
-    .param-c {
-        width: 100px;
     }
 </style>

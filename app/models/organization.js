@@ -19,6 +19,7 @@ class orgModel {
 					total: 50,
 					list: [{
 						corpid: 'zhangmen',
+						crmcorpid: 'zhangmen',
 						name: '掌门',
 						signKey: '4x1tHXuV9j',
 						signAddress: 'www.baidu.com',
@@ -30,6 +31,7 @@ class orgModel {
 						state: '已开启'
 					}, {
 						corpid: 'vipabc',
+						crmcorpid: 'vipabc',
 						name: 'vipabc',
 						signKey: 'nUwWoK24pH',
 						signAddress: 'www.baidu.com',
@@ -41,6 +43,7 @@ class orgModel {
 						state: '已开启'
 					}, {
 						corpid: 'beifeng',
+						crmcorpid: 'beifeng',
 						name: '北风',
 						signKey: 'NdmTX6VnWk',
 						signAddress: 'www.baidu.com',
@@ -52,6 +55,7 @@ class orgModel {
 						state: '已停用'
 					}, {
 						corpid: 'zhangmen',
+						crmcorpid: 'zhangmen',
 						name: '掌门',
 						signKey: 'TKoirNdf0A',
 						signAddress: 'www.baidu.com',
@@ -63,6 +67,7 @@ class orgModel {
 						state: '已停用'
 					}, {
 						corpid: 'zhangmen',
+						crmcorpid: 'zhangmen',
 						name: '掌门',
 						signKey: 'qCYYp0CMV8',
 						signAddress: 'www.baidu.com',

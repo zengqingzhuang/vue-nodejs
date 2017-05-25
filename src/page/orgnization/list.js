@@ -9,7 +9,7 @@ export default {
 			pageNumber: 0,
 			pageTotal: 0,
 			orgList: [],
-			columns: ['corpId', '机构名称', 'signKey', '签名地址', '商户号', '创建时间', '修改时间', '开启时间', '停用时间', '状态']
+			columns: ['分配corpId', 'crmcorpId', '机构名称', 'signKey', '签名地址', '商户号', '创建时间', '修改时间', '开启时间', '停用时间', '状态']
 		}
 	},
 	created() {

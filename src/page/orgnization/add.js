@@ -3,7 +3,7 @@ export default {
 	data() {
 		return {
 			selectedRow: {},
-			addressList: [0],
+			addressList: [],
 			markDialog: 0
 		}
 	},
@@ -21,10 +21,6 @@ export default {
 		},
 		closeDialog() {
 			this.markDialog = 0;	
-		},
-		redirect() {
-			this.markDialog = 0;
-			window.open('http://www.baidu.com');
 		}
 	},
 	components: {
