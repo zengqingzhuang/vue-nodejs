@@ -18,8 +18,6 @@
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">机构管理</label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option2" id="inlineCheckbox2">通知地址管理</label>
-                    <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option3" id="inlineCheckbox3">推送参数管理</label>
                     <label class="checkbox-inline">
                         <input type="checkbox" value="option3" id="inlineCheckbox3">同步订单</label>
@@ -39,9 +37,6 @@
                     <h3>机构管理</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">列表</label>
-                    <h3>通知地址管理</h3>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="inlineCheckbox1">列表</label>
                     <h3>推送参数管理</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">列表</label>
@@ -80,15 +75,6 @@
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">编辑</label>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">删除</label>
-                    <h3>通知地址管理页面</h3>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="inlineCheckbox1">查询</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="inlineCheckbox1">新增</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="inlineCheckbox1">编辑</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="option1" id="inlineCheckbox1">删除</label>
                     <h3>推送参数管理页面</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">查询</label>
