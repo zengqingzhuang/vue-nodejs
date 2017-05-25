@@ -30,14 +30,14 @@ export default {
 		 * 新增
 		 */
 		addRow() {
-			location.href = '/#/params/add';
+			this.$router.push('/params/add');
 		},
 		/**
 		 * 编辑
 		 */
 		updateRow(row) {
 			if (!row) return;
-			location.href = '/#/params/edit?id=' + 1;
+			this.$router.push('/params/edit?id=1');
 		},
 		/**
 		 * 删除

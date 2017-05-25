@@ -7,6 +7,7 @@
             :pageSize='pageSize'
             :pageNumber='pageNumber'
             :pageTotal='pageTotal'
+            :showAdd='false'
             @updateRow='updateRow'
             @addRow='addRow'
             @deleteRow='deleteRow'

@@ -38,8 +38,7 @@ export default {
 		 */
 		updateRow(row) {
 			if (!row) return;
-			Object.assign(this.selectedRow, row);
-			this.markDialog = 1;
+			this.$router.push('/orgnization/edit?id=1');
 		},
 		/**
 		 * 删除

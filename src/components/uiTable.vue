@@ -1,9 +1,9 @@
 <template>
 	<div class="wrapper wrapper-content animated fadeInRight">
 		<div class="btns" v-if="showAdd || showUpdate || showDelete">
-			<button v-if="showAdd" class="btn btn-primary" type="button" @click="addRow"><i class="fa fa-check"></i> 新增</button>
+			<button v-if="showAdd" class="btn btn-primary" type="button" @click="addRow"><i class="fa fa-plus"></i> 新增</button>
 			<button v-if="showUpdate" class="btn btn-info" type="button" @click="updateRow"><i class="fa fa-paste"></i> 编辑</button>
-			<button v-if="showDelete" class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-warning"></i> 删除</button>
+			<button v-if="showDelete" class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-times"></i> 删除</button>
 		</div>
         <div class="row">
             <div class="col-sm-12">

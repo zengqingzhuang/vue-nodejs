@@ -32,16 +32,19 @@
                     <li>
                         <a href="#">
                             <i class="fa fa-table"></i>
-                            <span class="nav-label">机构管理</span>
+                            <span class="nav-label">机构配置管理</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="/#/orgnization/list">机构列表</a>
+                                <a class="J_menuItem" href="/#/orgnization/list">列表</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="/#/orgnization/add">新增</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">
                             <i class="fa fa-table"></i>
                             <span class="nav-label">通知地址管理</span>
@@ -52,7 +55,7 @@
                                 <a class="J_menuItem" href="/#/address/list">列表</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#">
                             <i class="fa fa-table"></i>
@@ -65,9 +68,6 @@
                             </li>
                             <li>
                                 <a class="J_menuItem" href="/#/params/add">新增</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="/#/params/edit">编辑</a>
                             </li>
                         </ul>
                     </li>

@@ -3,8 +3,12 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import App from './App.vue';
 
-// 机构列表页面
+// 机构配置列表页面
 import orgList from './page/orgnization/list.vue';
+// 机构配置新增页面
+import orgAdd from './page/orgnization/add.vue';
+// 机构配置编辑页面
+import orgEdit from './page/orgnization/edit.vue';
 // 通知地址页面
 import addressList from './page/address/list.vue';
 // 推送参数列表页面
@@ -32,6 +36,8 @@ const router = new VueRouter({
 	routes: [
 		{ path: '/', component: App, children: [
 			{ path: '/orgnization/list', component: orgList },
+			{ path: '/orgnization/add', component: orgAdd },
+			{ path: '/orgnization/edit', component: orgEdit },
 			{ path: '/address/list', component: addressList },
 			{ path: '/params/list', component: paramsList },
 			{ path: '/params/add', component: paramsAdd },

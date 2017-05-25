@@ -7,6 +7,7 @@
             :pageSize='pageSize'
             :pageNumber='pageNumber'
             :pageTotal='pageTotal'
+            :showAdd="false"
             @updateRow='updateRow'
             @addRow='addRow'
             @deleteRow='deleteRow'
@@ -52,7 +53,7 @@
                             <label>
                                 <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">开启</label>
                             <label>
-                                <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">关闭</label>
+                                <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">停用</label>
                         </div>
                     </form>
                 </div>
@@ -66,6 +67,7 @@
                     <p>确认删除?</p>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-white" @click="closeDialog">取消</button>
                     <button type="button" class="btn btn-primary" @click="deleteCurRow">确定</button>
                 </div>
             </div>
