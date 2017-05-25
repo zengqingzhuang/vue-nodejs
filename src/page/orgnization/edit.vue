@@ -65,7 +65,9 @@
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label"></label>
-                    <button type="button" class="btn btn-primary" @click="btnSave">保存</button>
+                    <div class="col-sm-8">
+                        <button type="button" class="btn btn-primary" @click="btnSave">保存</button>
+                    </div>
                 </div>
             </form>
         </div>
