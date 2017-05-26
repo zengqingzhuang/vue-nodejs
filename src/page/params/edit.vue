@@ -1,5 +1,5 @@
 <template>
-    <div class="ibox-content">
+    <div class="wrapper wrapper-content animated fadeInRight">
         <form class="form-horizontal m-t" id="commentForm">
             <div class="form-group">
                 <label class="col-sm-3 control-label">分类名称:</label>

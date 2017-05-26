@@ -14,7 +14,7 @@ class paramsModel {
 				className: 'B分类',
 				params: 'state,money'
 			},{
-				className: 'B分类',
+				className: 'C分类',
 				params: 'state,money,time'
 			}]
 		}

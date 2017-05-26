@@ -19,6 +19,8 @@ import paramsAdd from './page/params/add.vue';
 import paramsEdit from './page/params/edit.vue';
 // 同步订单页面
 import getOrder from './page/getOrder/order.vue';
+// 课程信息查询
+import courseList from './page/course/list.vue';
 // 用户信息查询页面
 import getUserInfo from './page/userInfo/list.vue';
 // 权限管理-用户列表
@@ -43,6 +45,7 @@ const router = new VueRouter({
 			{ path: '/params/add', component: paramsAdd },
 			{ path: '/params/edit', component: paramsEdit },
 			{ path: '/getOrder', component: getOrder },
+			{ path: '/course/list', component: courseList },
 			{ path: '/user/list', component: getUserInfo },
 			{ path: '/auth/userList', component: authUserList },
 			{ path: '/auth/roleList', component: authRoleList },

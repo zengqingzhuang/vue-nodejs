@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">推送参数:</label>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                         <select class="form-control col-md-3" name="account">
                             <option>A分类</option>
                             <option>B分类</option>

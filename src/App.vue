@@ -86,6 +86,18 @@
                     <li>
                         <a href="#">
                             <i class="fa fa-table"></i>
+                            <span class="nav-label">课程信息查询</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="/#/course/list">课程列表</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-table"></i>
                             <span class="nav-label">用户信息查询</span>
                             <span class="fa arrow"></span>
                         </a>

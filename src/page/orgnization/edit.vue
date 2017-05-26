@@ -64,6 +64,16 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-3 control-label">推送参数:</label>
+                    <div class="col-sm-2">
+                        <select class="form-control col-md-3" name="account">
+                            <option>A分类</option>
+                            <option>B分类</option>
+                            <option>C分类</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-3 control-label"></label>
                     <div class="col-sm-8">
                         <button type="button" class="btn btn-primary" @click="btnSave">保存</button>
