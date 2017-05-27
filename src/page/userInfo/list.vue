@@ -3,7 +3,13 @@
         <div class="content animated fadeInRight">
             <form role="form" class="form-inline">
                 <div class="form-group">
-                    <input type="text" placeholder="请输入机构ID" id="exampleInputEmail2" class="form-control">
+                    <select class="form-control" name="account">
+                        <option>请选择机构</option>
+                        <option value="">vipabc</option>
+                        <option>掌门</option>
+                        <option>北风</option>
+                        <option>华东</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="text" placeholder="请输入订单ID" id="exampleInputPassword2" class="form-control">
