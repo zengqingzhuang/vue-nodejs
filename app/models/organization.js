@@ -26,8 +26,6 @@ class orgModel {
 						shNumber: '1',
 						createTime: '2015-03-06 10:58',
 						updateTime: '2016-03-06 10:58',
-						startTime: '2015-03-06 10:58',
-						stopTime: '2015-03-06 10:58',
 						state: '已开启'
 					}, {
 						corpid: 'vipabc',
@@ -38,8 +36,6 @@ class orgModel {
 						shNumber: '2',
 						createTime: '2015-03-06 10:58',
 						updateTime: '2016-03-06 10:58',
-						startTime: '2015-03-06 10:58',
-						stopTime: '',
 						state: '已开启'
 					}, {
 						corpid: 'beifeng',
@@ -50,9 +46,7 @@ class orgModel {
 						shNumber: '3',
 						createTime: '2015-03-06 10:58',
 						updateTime: '2016-03-06 10:58',
-						startTime: '2015-03-06 10:58',
-						stopTime: '',
-						state: '已停用'
+						state: '未开启'
 					}, {
 						corpid: 'zhangmen',
 						crmcorpid: 'zhangmen',
@@ -62,9 +56,7 @@ class orgModel {
 						shNumber: '4',
 						createTime: '2015-03-06 10:58',
 						updateTime: '2016-03-06 10:58',
-						startTime: '2015-03-06 10:58',
-						stopTime: '2015-03-06 10:58',
-						state: '已停用'
+						state: '未开启'
 					}, {
 						corpid: 'zhangmen',
 						crmcorpid: 'zhangmen',
@@ -74,8 +66,6 @@ class orgModel {
 						shNumber: '5',
 						createTime: '2015-03-06 10:58',
 						updateTime: '2016-03-06 10:58',
-						startTime: '2015-03-06 10:58',
-						stopTime: '2015-03-06 10:58',
 						state: '已开启'
 					}]
 				}

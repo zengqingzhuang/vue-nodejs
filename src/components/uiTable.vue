@@ -4,6 +4,8 @@
 			<button v-if="showAdd" class="btn btn-primary" type="button" @click="addRow"><i class="fa fa-plus"></i> 新增</button>
 			<button v-if="showUpdate" class="btn btn-info" type="button" @click="updateRow"><i class="fa fa-paste"></i> 编辑</button>
 			<button v-if="showDelete" class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-times"></i> 删除</button>
+			<button v-if="showOpen" class="btn btn-info" type="button" @click="openRow"><i class="fa fa-check"></i> 开启</button>
+			<button v-if="showStop" class="btn btn-danger" type="button" @click="stopRow"><i class="fa fa-warning"></i> 停用</button>
 		</div>
         <div class="row">
             <div class="col-sm-12">
@@ -142,6 +144,14 @@
 			pageTotal: { // 总页数
 				type: Number,
 				default: 0
+			},
+			showOpen: {
+				type: Boolean,
+				default: false
+			},
+			showStop: {
+				type: Boolean,
+				default: false
 			}
 		},
 		methods: {
@@ -153,6 +163,12 @@
 			},
 			deleteRow() { // 删除
 				this.$emit('deleteRow', this.selectedRow);
+			},
+			openRow() {
+				this.$emit('openRow', this.selectedRow);
+			},
+			stopRow() {
+				this.$emit('stopRow', this.selectedRow);
 			},
 			onSelectRow(row, index) {
 				if (!Object.is(this.selectedRow, row)) {

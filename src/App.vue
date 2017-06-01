@@ -56,7 +56,7 @@
                             </li>
                         </ul>
                     </li> -->
-                    <li>
+                    <!-- <li>
                         <a href="#">
                             <i class="fa fa-table"></i>
                             <span class="nav-label">推送参数管理</span>
@@ -70,7 +70,7 @@
                                 <a class="J_menuItem" href="/#/params/add">新增</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#">
                             <i class="fa fa-edit"></i>

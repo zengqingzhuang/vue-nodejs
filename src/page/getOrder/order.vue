@@ -25,31 +25,31 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">orderid:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="" placeholder="请输入订单号" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">money:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="" placeholder="请输入贷款金额" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">dealmoney:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="" placeholder="请输入成交价格" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">period:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="" placeholder="请输入分期期数" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">oauthid:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="" placeholder="请输入用户编号" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
