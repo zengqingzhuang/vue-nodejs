@@ -1,4 +1,5 @@
 import uiTable from 'components/uiTable';
+import uiDialog from 'components/uiDialog';
 export default {
 	data() {
 		return {
@@ -35,6 +36,12 @@ export default {
 			if (!this.selectedRow) return;
 			this.$router.push('/approve/compare?id=1');
 		},
+		btnOk() {
+			this.markDialog = 1;
+		},
+		closeDialog() {
+			this.markDialog = 0;
+		},
 		queryList(page) {
 			this.queryList1(page);
 		},
@@ -43,6 +50,7 @@ export default {
 		}
 	},
 	components: {
-        uiTable
+        uiTable,
+        uiDialog
     }
 }
