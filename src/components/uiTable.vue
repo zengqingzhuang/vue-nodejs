@@ -1,13 +1,7 @@
 <template>
 	<div class="wrapper wrapper-content animated fadeInRight">
-		<div class="btns" v-if="showAdd || showUpdate || showDelete">
-			<button v-if="showAdd" class="btn btn-primary" type="button" @click="addRow"><i class="fa fa-plus"></i> 新增</button>
-			<button v-if="showUpdate" class="btn btn-info" type="button" @click="updateRow"><i class="fa fa-paste"></i> 编辑</button>
-			<button v-if="showDelete" class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-times"></i> 删除</button>
-			<button v-if="showOpen" class="btn btn-info" type="button" @click="openRow"><i class="fa fa-check"></i> 开启</button>
-			<button v-if="showStop" class="btn btn-danger" type="button" @click="stopRow"><i class="fa fa-warning"></i> 停用</button>
-		</div>
-        <div class="row">
+		<slot name="content"></slot>
+        <div class="row mgin">
             <div class="col-sm-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -84,7 +78,6 @@
 	export default {
 		data() {
 			return {
-				selectedRow: '',
 				selectIndex: -1
 			}
 		},
@@ -121,18 +114,6 @@
 				type: Boolean,
 				default: true	
 			},
-			showAdd: { // 是否显示新增按钮
-				type: Boolean,
-				default: true
-			},
-			showUpdate: { // 是否显示编辑按钮
-				type: Boolean,
-				default: true
-			},
-			showDelete: { // 是否显示删除按钮
-				type: Boolean,
-				default: true
-			},
 			pageSize: { // 每页大小
 				type: Number,
 				default: 20
@@ -144,37 +125,12 @@
 			pageTotal: { // 总页数
 				type: Number,
 				default: 0
-			},
-			showOpen: {
-				type: Boolean,
-				default: false
-			},
-			showStop: {
-				type: Boolean,
-				default: false
 			}
 		},
 		methods: {
-			addRow() { // 新增
-				this.$emit('addRow');
-			},
-			updateRow() { // 编辑
-				this.$emit('updateRow', this.selectedRow);
-			},
-			deleteRow() { // 删除
-				this.$emit('deleteRow', this.selectedRow);
-			},
-			openRow() {
-				this.$emit('openRow', this.selectedRow);
-			},
-			stopRow() {
-				this.$emit('stopRow', this.selectedRow);
-			},
 			onSelectRow(row, index) {
-				if (!Object.is(this.selectedRow, row)) {
-					this.selectedRow = row;
-					this.selectIndex = index;
-				}
+				this.selectIndex = index;
+				this.$emit('onSelectRow', row);
 			},
 			queryList(page) {
 				this.$emit('queryList', page)
@@ -186,7 +142,7 @@
 	}
 </script>
 <style lang="sass" scoped rel="stylesheet/sass">
-	.btns {
-		margin-bottom: 15px;
+	.mgin {
+		margin-top: 15px;
 	}
 </style>

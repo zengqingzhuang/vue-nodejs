@@ -27,13 +27,6 @@ export default {
 			});
 		},
 		/**
-		 * 新增
-		 */
-		addRow() {
-			this.selectedRow = {};
-			this.markDialog = 1;
-		},
-		/**
 		 * 编辑
 		 */
 		updateRow(row) {
@@ -72,6 +65,10 @@ export default {
 		},
 		queryList(page) {
 			this.queryList1(page);
+		},
+		onSelectRow(row) {
+			this.selectedRow = row;
+			console.log(row)
 		}
 	},
 	components: {

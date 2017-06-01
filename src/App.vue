@@ -121,6 +121,18 @@
                     </li> -->
                     <li>
                         <a href="#">
+                            <i class="fa fa-table"></i>
+                            <span class="nav-label">审核</span>
+                            <span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="J_menuItem" href="/#/approve/list">列表</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
                             <i class="fa fa-cutlery"></i>
                             <span class="nav-label">权限管理</span>
                             <span class="fa arrow"></span>

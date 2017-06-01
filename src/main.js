@@ -23,6 +23,10 @@ import getOrder from './page/getOrder/order.vue';
 import courseList from './page/course/list.vue';
 // 用户信息查询页面
 import getUserInfo from './page/userInfo/list.vue';
+// 审核列表页面
+import approveList from './page/approve/list.vue';
+// 审核对比页面
+import compareList from './page/approve/compare.vue';
 // 权限管理-用户列表
 import authUserList from './page/auth/user/list.vue';
 // 权限管理-角色列表
@@ -47,6 +51,8 @@ const router = new VueRouter({
 			{ path: '/getOrder', component: getOrder },
 			{ path: '/course/list', component: courseList },
 			{ path: '/user/list', component: getUserInfo },
+			{ path: '/approve/list', component: approveList },
+			{ path: '/approve/compare', component: compareList },
 			{ path: '/auth/userList', component: authUserList },
 			{ path: '/auth/roleList', component: authRoleList },
 			{ path: '/auth/list', component: authList }
