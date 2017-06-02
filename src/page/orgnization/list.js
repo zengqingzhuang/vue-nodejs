@@ -3,7 +3,7 @@ import uiDialog from 'components/uiDialog';
 export default {
 	data() {
 		return {
-			selectedRow: {},
+			selectRow: {},
 			markDialog: 0, // 1-编辑弹窗 2-删除弹窗
 			pageSize: 5,
 			pageNumber: 0,
@@ -49,7 +49,7 @@ export default {
 		 * 保存
 		 */
 		btnSave() {
-			console.log(this.selectedRow)
+			console.log(this.selectRow)
 		},
 		openRow() {
 			this.markDialog = 3;
@@ -67,7 +67,7 @@ export default {
 			this.queryList1(page);
 		},
 		onSelectRow(row) {
-			this.selectedRow = row;
+			this.selectRow = row;
 			console.log(row)
 		}
 	},

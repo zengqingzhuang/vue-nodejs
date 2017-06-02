@@ -7,10 +7,13 @@
             :pageSize='pageSize'
             :pageNumber='pageNumber'
             :pageTotal='pageTotal'
-            @updateRow='updateRow'
-            @addRow='addRow'
-            @deleteRow='deleteRow'
-            @queryList='queryList'>
+            @queryList='queryList'
+            @onSelectedRow='onSelectedRow'>
+            <div slot='content'>
+                <button class="btn btn-primary" type="button" @click="addRow"><i class="fa fa-plus"></i> 新增</button>
+                <button class="btn btn-info" type="button" @click="updateRow"><i class="fa fa-paste"></i> 编辑</button>
+                <button class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-times"></i> 删除</button>
+            </div>
         </ui-table>
         <ui-dialog
             :show='markDialog === 1 || markDialog === 2'>

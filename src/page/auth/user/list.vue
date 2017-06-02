@@ -7,10 +7,13 @@
             :pageSize='pageSize'
             :pageNumber='pageNumber'
             :pageTotal='pageTotal'
-            @updateRow='updateRow'
-            @addRow='addRow'
-            @deleteRow='deleteRow'
-            @queryList='queryList'>
+            @queryList='queryList'
+            @onSelectRow='onSelectRow'>
+            <div slot='content'>
+                <button class="btn btn-primary" type="button" @click="addRow"><i class="fa fa-plus"></i> 新增</button>
+                <button class="btn btn-info" type="button" @click="updateRow"><i class="fa fa-paste"></i> 编辑</button>
+                <button class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-times"></i> 删除</button>
+            </div>
         </ui-table>
         <ui-dialog
             :show='markDialog === 1 || markDialog === 2'>
@@ -20,25 +23,25 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">账号名称:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.accountName" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                                <input v-model="selectRow.accountName" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">姓名:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.Name" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
+                                <input v-model="selectRow.Name" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">手机号:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.Mobile" id="curl" type="url" class="form-control" name="url">
+                                <input v-model="selectRow.Mobile" id="curl" type="url" class="form-control" name="url">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">邮箱:</label>
                             <div class="col-sm-8">
-                               <input v-model="selectedRow.Email" id="curl" type="url" class="form-control" name="url">
+                               <input v-model="selectRow.Email" id="curl" type="url" class="form-control" name="url">
                             </div>
                         </div>
                         <div class="form-group">
@@ -65,6 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" @click="deleteCurRow">确定</button>
+                    <button type="button" class="btn btn-white" @click="closeDialog">取消</button>
                 </div>
             </div>
         </ui-dialog>

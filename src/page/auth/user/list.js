@@ -3,7 +3,8 @@ import uiDialog from 'components/uiDialog';
 export default {
 	data() {
 		return {
-			selectedRow: {},
+			selectRow: '',
+			curRow: '',
 			markDialog: 0, // 1-编辑弹窗 2-删除弹窗
 			pageSize: 5,
 			pageNumber: 0,
@@ -40,15 +41,15 @@ export default {
 		 * 新增
 		 */
 		addRow() {
-			this.selectedRow = {};
+			this.selectRow = {};
 			this.markDialog = 1;
 		},
 		/**
 		 * 编辑
 		 */
-		updateRow(row) {
-			if (!row) return;
-			Object.assign(this.selectedRow, row);
+		updateRow() {
+			this.selectRow = this.curRow;
+			if (!this.selectRow) return;		
 			this.markDialog = 1;
 		},
 		/**
@@ -67,13 +68,11 @@ export default {
 		 * 保存
 		 */
 		btnSave() {
-			console.log(this.selectedRow)
+			console.log(this.selectRow)
 		},
-		/**
-		 * 删除当前行
-		 */
-		deleteCurRow() {
-			this.closeDialog();
+		onSelectRow(row) {
+			this.selectRow = row;
+			this.curRow = row;
 		}
 	},
 	components: {

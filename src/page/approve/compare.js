@@ -15,6 +15,7 @@ export default {
 			corpid: 'zhangmen',
 			crmcorpid: 'zhangmen',
 			name: '掌门',
+			signKey: 'zhangmen',
 			signAddress: 'www.111.com',
 			shNumber: '1'
 		}
@@ -22,6 +23,7 @@ export default {
 			corpid: 'beifen',
 			crmcorpid: 'beifen',
 			name: '掌门',
+			signKey: 'zhangmen',
 			signAddress: 'www.222.com',
 			shNumber: '1'
 		}
