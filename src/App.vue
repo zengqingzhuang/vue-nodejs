@@ -74,7 +74,7 @@
                     <li>
                         <a href="#">
                             <i class="fa fa-edit"></i>
-                            <span class="nav-label">同步订单</span>
+                            <span class="nav-label">测试模拟</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
@@ -86,43 +86,25 @@
                     <li>
                         <a href="#">
                             <i class="fa fa-table"></i>
-                            <span class="nav-label">课程信息查询</span>
+                            <span class="nav-label">数据查询</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="/#/course/list">课程列表</a>
+                                <a class="J_menuItem" href="/#/course/list">课程信息</a>
                             </li>
+                            <li>
+                                <a class="J_menuItem" href="/#/user/list">用户信息</a>
+                            </li>
+                            <!-- <li>
+                                <a class="J_menuItem" href="/#/orgnization/list">日志信息</a>
+                            </li> -->
                         </ul>
                     </li>
                     <li>
                         <a href="#">
                             <i class="fa fa-table"></i>
-                            <span class="nav-label">用户信息查询</span>
-                            <span class="fa arrow"></span>
-                        </a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a class="J_menuItem" href="/#/user/list">列表</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- <li>
-                        <a href="#">
-                            <i class="fa fa-cutlery"></i>
-                            <span class="nav-label">日志查询</span>
-                            <span class="fa arrow"></span>
-                        </a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a class="J_menuItem" href="/#/orgnization/list">列表</a>
-                            </li>
-                        </ul>
-                    </li> -->
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-table"></i>
-                            <span class="nav-label">审核</span>
+                            <span class="nav-label">审批管理</span>
                             <span class="fa arrow"></span>
                         </a>
                         <ul class="nav nav-second-level">

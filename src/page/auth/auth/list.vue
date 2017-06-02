@@ -16,13 +16,13 @@
                 </div>
                 <div class="ibox-content">
                     <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">机构管理</label>
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">机构配置管理</label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option3" id="inlineCheckbox3">推送参数管理</label>
+                        <input type="checkbox" value="option3" id="inlineCheckbox3">测试模拟</label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" value="option3" id="inlineCheckbox3">同步订单</label>
+                        <input type="checkbox" checked="checked" value="option3" id="inlineCheckbox3">数据查询</label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option3" id="inlineCheckbox3">用户信息查询</label>
+                        <input type="checkbox" value="option3" id="inlineCheckbox3">审批管理</label>
                     <label class="checkbox-inline">
                         <input type="checkbox" value="option3" id="inlineCheckbox3">权限管理</label>
                 </div>
@@ -34,22 +34,26 @@
                     <h5>页面权限</h5>
                 </div>
                 <div class="ibox-content">
-                    <h3>机构管理</h3>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">列表</label>
-                    <h3>推送参数管理</h3>
+                    <h3>机构配置管理</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">列表</label>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">新增</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">编辑</label>
-                    <h3>同步订单</h3>
+                    <h3>测试模拟</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" value="option1" id="inlineCheckbox1">同步订单</label>
-                    <h3>用户信息查询</h3>
+                    <h3>数据查询</h3>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">课程信息</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">用户信息</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">日志信息</label>
+                    <h3>审批管理</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">列表</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">审批</label>
                     <h3>权限管理</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" value="option1" id="inlineCheckbox1">用户列表</label>
@@ -66,30 +70,34 @@
                     <h5>功能权限</h5>
                 </div>
                 <div class="ibox-content">
-                    <h3>机构管理页面</h3>
+                    <h3>机构配置列表页</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">查询</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">新增</label>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">编辑</label>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">删除</label>
-                    <h3>推送参数管理页面</h3>
                     <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">查询</label>
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">开启</label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">新增</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">编辑</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">删除</label>
-                    <h3>同步订单页面</h3>
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">停用</label>
+                    <h3>同步订单页</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" value="option1" id="inlineCheckbox1">同步订单</label>
-                    <h3>用户信息查询页面</h3>
+                    <h3>用户信息查询页</h3>
                     <label class="checkbox-inline">
                         <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">查询</label>
+                    <h3>课程信息查询页</h3>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">查询</label>
+                    <h3>日志信息查询页</h3>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">查询</label>
+                    <h3>审批列表页</h3>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">查询</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">审批</label>
                     <h3>权限管理</h3>
                     <h5>用户列表页面</h5>
                     <label class="checkbox-inline">

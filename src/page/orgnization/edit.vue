@@ -64,12 +64,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">推送参数:</label>
-                    <div class="col-sm-2">
-                        <input  id="curl" type="url" class="form-control" name="url" placeholder="多个参数以逗号分隔">
-                    </div>
-                </div>
-                <div class="form-group">
                     <label class="col-sm-3 control-label"></label>
                     <div class="col-sm-8">
                         <button type="button" class="btn btn-primary" @click="btnSave">保存</button>
