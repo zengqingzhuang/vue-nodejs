@@ -10,7 +10,7 @@ export default {
 			pageNumber: 0,
 			pageTotal: 0,
 			userList: [],
-			columns: ['ID', '账号名称', '姓名', '手机号', '邮箱', '角色']
+			columns: ['账号名称', '姓名', '手机号', '邮箱', '角色']
 		}
 	},
 	created() {
@@ -20,7 +20,6 @@ export default {
 		queryList() {
 			this.userList = [
 				{
-					ID: 1,
 					accountName: 'zhangsan',
 					Name: '张三',
 					Mobile: '13999999999',
@@ -28,7 +27,6 @@ export default {
 					Role: 'RD'
 				},
 				{
-					ID: 2,
 					accountName: 'lisi',
 					Name: '李四',
 					Mobile: '13888888888',

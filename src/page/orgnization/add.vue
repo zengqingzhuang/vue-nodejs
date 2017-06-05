@@ -3,15 +3,15 @@
         <div class="wrapper wrapper-content animated fadeInRight">
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">分配corpid:</label>
+                    <label class="col-sm-3 control-label">appId:</label>
                     <div class="col-sm-3">
-                        <input v-model="selectedRow.corpid" placeholder="请输入分配给机构的corpid" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                        <input v-model="selectedRow.corpid" placeholder="请输入分配给机构的appId" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">crm-corpid:</label>
                     <div class="col-sm-3">
-                        <input v-model="selectedRow.crmcorpid" placeholder="请输入CRM系统的corpid" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                        <input v-model="selectedRow.crmcorpid" placeholder="请输入CRM系统的机构ID" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
