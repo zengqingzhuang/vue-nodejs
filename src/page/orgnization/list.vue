@@ -14,6 +14,16 @@
                 <button class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-times"></i> 删除</button>
                 <button class="btn btn-info" type="button" @click="openRow"><i class="fa fa-check"></i> 开启</button>
                 <button class="btn btn-danger" type="button" @click="stopRow"><i class="fa fa-warning"></i> 停用</button>
+                <div class="pull-right">
+                    <div class="pull-left search columns columns-right"><input class="form-control input-outline" type="text" placeholder="请输入要查询的信息"></div>
+                    <div class="pull-left">
+                        <select class="form-control" name="state">
+                            <option>已开启</option>
+                            <option>未开启</option>
+                        </select>    
+                    </div>
+                    <button class="btn btn-default btn-outline" type="button"><i class="fa fa-check"></i> 查询</button>
+                </div>
             </div>
         </ui-table>
         <ui-dialog
