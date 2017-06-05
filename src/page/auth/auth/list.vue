@@ -4,8 +4,8 @@
             <select class="form-control m-b select-role" name="account">
                 <option>RD</option>
                 <option>QA</option>
-                <option>PM</option>
-                <option>OP</option>
+                <option>edu-PM</option>
+                <option>zf-PM</option>
             </select>
             <button type="button" class="btn btn-primary" @click="btnSave">保存</button>
         </div>

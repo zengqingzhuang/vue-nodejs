@@ -8,7 +8,7 @@
             :pageNumber='pageNumber'
             :pageTotal='pageTotal'
             @queryList='queryList'
-            @onSelectedRow='onSelectedRow'>
+            @onSelectRow='onSelectRow'>
             <div slot='content'>
                 <button class="btn btn-primary" type="button" @click="addRow"><i class="fa fa-plus"></i> 新增</button>
                 <button class="btn btn-info" type="button" @click="updateRow"><i class="fa fa-paste"></i> 编辑</button>
@@ -21,21 +21,24 @@
                 <div class="ibox-content">
                     <form class="form-horizontal m-t" id="commentForm">
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">ID:</label>
-                            <div class="col-sm-8">
-                                <input v-model="selectedRow.accountName" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-3 control-label">角色编码:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.Name" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
+                                <input v-model="selectedRow.Code" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-3 control-label">角色名称:</label>
                             <div class="col-sm-8">
-                                <input v-model="selectedRow.Mobile" id="curl" type="url" class="form-control" name="url">
+                                <input v-model="selectedRow.Name" id="curl" type="url" class="form-control" name="url">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">场景:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="account">
+                                    <option>教育</option>
+                                    <option>租房</option>
+                                </select>
                             </div>
                         </div>
                     </form>
@@ -51,6 +54,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" @click="deleteCurRow">确定</button>
+                    <button type="button" class="btn btn-white" @click="closeDialog">取消</button>
                 </div>
             </div>
         </ui-dialog>
