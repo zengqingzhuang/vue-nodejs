@@ -23,33 +23,60 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">orderid:</label>
+                    <label class="col-sm-3 control-label">订单ID:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" placeholder="请输入订单号" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="20170101124" placeholder="请输入订单号" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">money:</label>
+                    <label class="col-sm-3 control-label">贷款金额:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" placeholder="请输入贷款金额" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="10000" placeholder="请输入贷款金额" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">dealmoney:</label>
+                    <label class="col-sm-3 control-label">成交价格:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" placeholder="请输入成交价格" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="9000" placeholder="请输入成交价格" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">period:</label>
+                    <label class="col-sm-3 control-label">分期期数:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" placeholder="请输入分期期数" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="0" placeholder="请输入分期期数" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">oauthid:</label>
+                    <label class="col-sm-3 control-label">用户编号:</label>
                     <div class="col-sm-3">
-                        <input id="cemail" type="email" value="" placeholder="请输入用户编号" class="form-control" name="email" required="" aria-required="true">
+                        <input id="cemail" type="email" value="1" placeholder="请输入用户编号" class="form-control" name="email" required="" aria-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">返回地址类型:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" name="" id="">
+                            <option value="0">PC扫码页</option>
+                            <option value="1">手机订单确认页</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">用户名:</label>
+                    <div class="col-sm-3">
+                        <input id="cemail" type="email" value="zhangsan" placeholder="请输入用户名" class="form-control" name="email" required="" aria-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">邮箱:</label>
+                    <div class="col-sm-3">
+                        <input id="cemail" type="email" value="zhangsan@baidu.com" placeholder="请输入邮箱" class="form-control" name="email" required="" aria-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">手机号:</label>
+                    <div class="col-sm-3">
+                        <input id="cemail" type="email" value="13888888888" placeholder="请输入手机号" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
