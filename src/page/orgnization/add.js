@@ -4,7 +4,8 @@ export default {
 		return {
 			selectedRow: {},
 			addressList: [],
-			markDialog: 0
+			markDialog: 0,
+			sceneIndex: 1
 		}
 	},
 	created() {
@@ -21,6 +22,9 @@ export default {
 		},
 		closeDialog() {
 			this.markDialog = 0;	
+		},
+		selectScene(value) {
+			this.sceneIndex = parseInt(value, 10);
 		}
 	},
 	components: {

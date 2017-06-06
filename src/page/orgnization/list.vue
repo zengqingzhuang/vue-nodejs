@@ -63,4 +63,7 @@
     export default list;
 </script>
 <style lang="sass" scoped rel="stylesheet/sass">
+    .pull-left {
+        margin-right: 5px;
+    }
 </style>

@@ -9,42 +9,23 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">crm-corpid:</label>
-                    <div class="col-sm-3">
-                        <input v-model="selectedRow.crmcorpid" placeholder="请输入CRM系统的机构ID" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
-                    </div>
-                </div>
-                <div class="form-group">
                     <label class="col-sm-3 control-label">机构名称:</label>
                     <div class="col-sm-3">
                         <input v-model="selectedRow.name" placeholder="请输入机构名称" id="cemail" type="email" class="form-control" name="email" required="" aria-required="true">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">signKey:</label>
+                    <label class="col-sm-3 control-label">百度密钥:</label>
                     <div class="col-sm-3">
                         <input value="zhangmen" disabled="disabled" id="curl" type="url" class="form-control" name="url">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label">签名地址:</label>
+                    <label class="col-sm-3 control-label">机构密钥:</label>
                     <div class="col-sm-3">
-                        <input v-model="selectedRow.signAddress" placeholder="请输入获取首付签名的地址" id="curl" type="url" class="form-control" name="url">
+                        <input value="zhangmen" disabled="disabled" id="curl" type="url" class="form-control" name="url">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">商户号:</label>
-                    <div class="col-sm-3">
-                        <input v-model="selectedRow.shNumber" id="curl" placeholder="请输入获取首付签名的商户号" type="url" class="form-control" name="url">
-                    </div>
-                </div>
-                <!-- <div class="form-group radio">
-                    <label class="col-sm-3 control-label">状态:</label>
-                    <label>
-                        <input type="radio" value="option1" id="optionsRadios1" name="optionsRadios">开启</label>
-                    <label>
-                        <input type="radio" checked="" value="option2" id="optionsRadios2" name="optionsRadios">停用</label>
-                </div> -->
                 <div class="form-group">
                     <label class="col-sm-3 control-label">通知地址:</label>
                     <div class="col-sm-3">
@@ -63,6 +44,49 @@
                         <button type="button" @click='addSendAddress' class="btn btn-default btn-sm rounded"><i class="fa fa-plus"></i></button>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">场景:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" name="account" @change='selectScene($event.target.value)'>
+                            <option value="1">教育</option>
+                            <option value="2">租房</option>
+                        </select>
+                    </div>
+                </div>
+                <template v-if="sceneIndex === 1">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">crm-corpid:</label>
+                        <div class="col-sm-3">
+                            <input v-model="selectedRow.crmcorpid" placeholder="请输入CRM系统的机构ID" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">签名地址:</label>
+                        <div class="col-sm-3">
+                            <input v-model="selectedRow.signAddress" placeholder="请输入获取首付签名的地址" id="curl" type="url" class="form-control" name="url">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">商户号:</label>
+                        <div class="col-sm-3">
+                            <input v-model="selectedRow.shNumber" id="curl" placeholder="请输入获取首付签名的商户号" type="url" class="form-control" name="url">
+                        </div>
+                    </div>
+                </template>
+                <template v-if="sceneIndex === 2">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">门店编码:</label>
+                        <div class="col-sm-3">
+                            <input v-model="selectedRow.crmcorpid" placeholder="请输入CRM系统的机构ID" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">IP白名单:</label>
+                        <div class="col-sm-3">
+                            <input v-model="selectedRow.signAddress" placeholder="请输入获取首付签名的地址" id="curl" type="url" class="form-control" name="url">
+                        </div>
+                    </div>
+                </template>
                 <div class="form-group">
                     <label class="col-sm-3 control-label"></label>
                     <div class="col-sm-8">

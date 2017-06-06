@@ -47,12 +47,14 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">角色:</label>
                             <div class="col-sm-8">
-                                <select class="form-control m-b" name="account">
-                                    <option>RD</option>
-                                    <option>QA</option>
-                                    <option>PM</option>
-                                    <option>OP</option>
-                                </select>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" checked="checked" value="option1" id="inlineCheckbox1">RD</label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" value="option1" id="inlineCheckbox1">QA</label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" value="option1" id="inlineCheckbox1">EDU-PM</label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" value="option1" id="inlineCheckbox1">ZF-PM</label>
                             </div>
                         </div>
                     </form>
