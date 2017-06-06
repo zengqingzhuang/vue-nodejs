@@ -9,7 +9,7 @@ export default {
 			pageNumber: 0,
 			pageTotal: 0,
 			orgList: [],
-			columns: ['appId', 'crmcorpId', '机构名称', '百度密钥', '机构密钥', '签名地址', '商户号', '创建时间', '修改时间', '状态']
+			columns: ['appId', 'crm-机构ID', '机构名称', '百度密钥', '机构密钥', '签名地址', '商户号', '创建时间', '修改时间', '状态']
 		}
 	},
 	created() {

@@ -55,7 +55,7 @@
                 </div>
                 <template v-if="sceneIndex === 1">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">crm-corpid:</label>
+                        <label class="col-sm-3 control-label">crm-机构ID:</label>
                         <div class="col-sm-3">
                             <input v-model="selectedRow.crmcorpid" placeholder="请输入CRM系统的机构ID" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
                         </div>
