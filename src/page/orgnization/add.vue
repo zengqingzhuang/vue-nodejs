@@ -75,9 +75,9 @@
                 </template>
                 <template v-if="sceneIndex === 2">
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">projectId:</label>
+                        <label class="col-sm-3 control-label">课程ID:</label>
                         <div class="col-sm-3">
-                            <input v-model="selectedRow.projectId" placeholder="请输入projectId" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                            <input v-model="selectedRow.projectId" placeholder="请输入课程ID" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
                         </div>
                     </div>
                     <div class="form-group">

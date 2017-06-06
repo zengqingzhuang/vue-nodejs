@@ -15,6 +15,13 @@
                 <button class="btn btn-info" type="button" @click="openRow"><i class="fa fa-check"></i> 开启</button>
                 <button class="btn btn-danger" type="button" @click="stopRow"><i class="fa fa-warning"></i> 停用</button>
                 <div class="pull-right">
+                    <div class="pull-left">
+                        <select class="form-control" name="state">
+                            <option>全部</option>
+                            <option>教育</option>
+                            <option>租房</option>
+                        </select>    
+                    </div>
                     <div class="pull-left search columns columns-right"><input class="form-control input-outline" type="text" placeholder="请输入要查询的信息"></div>
                     <div class="pull-left">
                         <select class="form-control" name="state">
