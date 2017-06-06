@@ -17,13 +17,13 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">百度密钥:</label>
                     <div class="col-sm-3">
-                        <input value="zhangmen" disabled="disabled" id="curl" type="url" class="form-control" name="url">
+                        <input value="zhangmen" id="curl" type="url" class="form-control" name="url">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">机构密钥:</label>
                     <div class="col-sm-3">
-                        <input value="zhangmen" disabled="disabled" id="curl" type="url" class="form-control" name="url">
+                        <input value="zhangmen" id="curl" type="url" class="form-control" name="url">
                     </div>
                 </div>
                 <div class="form-group">
@@ -75,15 +75,21 @@
                 </template>
                 <template v-if="sceneIndex === 2">
                     <div class="form-group">
+                        <label class="col-sm-3 control-label">projectId:</label>
+                        <div class="col-sm-3">
+                            <input v-model="selectedRow.projectId" placeholder="请输入projectId" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-sm-3 control-label">门店编码:</label>
                         <div class="col-sm-3">
-                            <input v-model="selectedRow.crmcorpid" placeholder="请输入CRM系统的机构ID" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
+                            <input v-model="selectedRow.shopCode" placeholder="请输入门店编码" name="name" minlength="2" type="text" class="form-control" required="" aria-required="true">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">IP白名单:</label>
                         <div class="col-sm-3">
-                            <input v-model="selectedRow.signAddress" placeholder="请输入获取首付签名的地址" id="curl" type="url" class="form-control" name="url">
+                            <input v-model="selectedRow.ips" placeholder="请输入IP白名单" id="curl" type="url" class="form-control" name="url">
                         </div>
                     </div>
                 </template>

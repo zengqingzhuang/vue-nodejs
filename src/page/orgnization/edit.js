@@ -4,7 +4,8 @@ export default {
 		return {
 			selectedRow: {},
 			addressList: [0],
-			markDialog: 0
+			markDialog: 0,
+			sceneIndex: 1
 		}
 	},
 	created() {
@@ -20,7 +21,12 @@ export default {
 				name: '掌门',
 				signKey: 'asdfas223d',
 				signAddress: 'www.baidu.com',
-				shNumber: 1
+				shNumber: 1,
+				projectId: 'sss',
+				shopCode: 'S000000697',
+				signAddress: 'www.baidu.com',
+				ips: '192.168.2.1'
+
 			}
 			this.addressList = [
 					{
@@ -42,6 +48,9 @@ export default {
 		},
 		closeDialog() {
 			this.markDialog = 0;	
+		},
+		selectScene(value) {
+			this.sceneIndex = parseInt(value, 10);
 		}
 	},
 	components: {

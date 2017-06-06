@@ -18,6 +18,7 @@
                     <div class="pull-left search columns columns-right"><input class="form-control input-outline" type="text" placeholder="请输入要查询的信息"></div>
                     <div class="pull-left">
                         <select class="form-control" name="state">
+                            <option>全部</option>
                             <option>已开启</option>
                             <option>未开启</option>
                         </select>    

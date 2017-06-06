@@ -16,6 +16,7 @@
                     <div class="pull-left search columns columns-right"><input class="form-control input-outline" type="text" placeholder="请输入要查询的信息"></div>
                     <div class="pull-left">
                         <select class="form-control" name="state">
+                            <option value="0">全部</option>
                             <option>审批中</option>
                             <option>审批通过</option>
                             <option>拒绝</option>
@@ -45,5 +46,7 @@
     export default list;
 </script>
 <style lang="sass" scoped rel="stylesheet/sass">
-
+    .pull-left {
+        margin-right: 5px;
+    }
 </style>
