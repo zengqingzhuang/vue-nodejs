@@ -1,4 +1,5 @@
 let express = require('express'),
+	oneapm = require('oneapm'),
 	app = express(),
 	path = require('path'),
 	_ = require('lodash'),
@@ -47,14 +48,12 @@ function readRouter(folderName) {
 	let folderDir = __dirname + '/' + folderName;
 	let fileArry = fs.readdirSync(folderDir);
 	_.forEach(fileArry, function(file) {
-		if (/\.js/.test(file)) {
-			let file_path = folderDir + '/' + file,
-				cur_file = fs.statSync(file_path);
-			if (cur_file.isDirectory()) { //是目录
-				readRouter(folderName + '/' + file);
-			} else {
-				app.use('/', require(file_path));
-			}
+		let file_path = folderDir + '/' + file,
+			cur_file = fs.statSync(file_path);
+		if (cur_file.isDirectory()) { //是目录
+			readRouter(folderName + '/' + file);
+		} else if (/\.js/.test(file)) {
+			app.use('/', require(file_path));
 		}
 	});
 }
