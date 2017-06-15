@@ -36,6 +36,15 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+//hbs配置
+// app.engine('hbs', hbs.express4({ //注册模版引擎
+// 	viewsDir: path.join(__dirname, 'views'),
+// 	partialsDir: path.join(__dirname, 'views/partials'),
+// 	layoutsDir: path.join(__dirname, 'views/layouts')
+// }));
+// app.set('view engine', 'hbs'); // 用hbs作为模版引擎
+// app.set('views', path.join(__dirname, 'views')); // 模版所在路径
+
 // webpack 配置
 app.use(webpackDevMiddleware(compiler, {
 	noInfo: true,
