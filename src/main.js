@@ -9,14 +9,6 @@ import orgList from './page/orgnization/list.vue';
 import orgAdd from './page/orgnization/add.vue';
 // 机构配置编辑页面
 import orgEdit from './page/orgnization/edit.vue';
-// 通知地址页面
-import addressList from './page/address/list.vue';
-// 推送参数列表页面
-import paramsList from './page/params/list.vue';
-// 推送参数新增页面
-import paramsAdd from './page/params/add.vue';
-// 推送参数编辑页面
-import paramsEdit from './page/params/edit.vue';
 // 同步订单页面
 import getOrder from './page/getOrder/order.vue';
 // 课程信息查询
@@ -44,10 +36,6 @@ const router = new VueRouter({
 			{ path: '/orgnization/list', component: orgList },
 			{ path: '/orgnization/add', component: orgAdd },
 			{ path: '/orgnization/edit', component: orgEdit },
-			{ path: '/address/list', component: addressList },
-			{ path: '/params/list', component: paramsList },
-			{ path: '/params/add', component: paramsAdd },
-			{ path: '/params/edit', component: paramsEdit },
 			{ path: '/getOrder', component: getOrder },
 			{ path: '/course/list', component: courseList },
 			{ path: '/user/list', component: getUserInfo },
@@ -63,3 +51,4 @@ const router = new VueRouter({
 new Vue({
 	router
 }).$mount('#app');
+
