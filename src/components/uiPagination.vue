@@ -58,6 +58,10 @@
 				default: function() {
 					return ["total", "gopage"]
 				}
+			},
+			namespace: { // 命名空间
+				type: String,
+				default: ''
 			}
     	},
     	watch: {
@@ -205,8 +209,9 @@
 			    // 输出
 			    this.pageHtml = html.join('');
     		},
-    		clickPage(page) {
-    			this.$emit('queryList', page);
+    		clickPage(pageNumber) {
+    			let fucName = this.namespace ? this.namespace + '/' + 'queryList' : 'queryList';
+    			this.$store.dispatch(fucName, {pageNumber});
     		}
     	}
     }

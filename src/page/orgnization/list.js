@@ -1,36 +1,44 @@
 import uiTable from 'components/uiTable';
 import uiDialog from 'components/uiDialog';
+import {mapGetters, mapActions} from 'Vuex';
 export default {
 	data() {
 		return {
-			selectRow: {},
 			markDialog: 0, // 1-编辑弹窗 2-删除弹窗
-			pageSize: 5,
-			pageNumber: 0,
-			pageTotal: 0,
-			orgList: [],
 			columns: ['appId', 'crm-机构ID', '机构名称', '百度密钥', '机构密钥', '签名地址', '商户号', '创建时间', '修改时间', '状态']
 		}
 	},
 	created() {
-		this.queryList1(1);
+		this.queryList({
+			pageSize: 5,
+			pageNumber: 1
+		});
+	},
+	computed: {
+		...mapGetters('organization/', {
+	    	orgList: 'orgList',
+	    	pageSize: 'pageSize',
+	    	pageNumber: 'pageNumber',
+	    	pageTotal: 'pageTotal',
+	    	selectRow: 'selectRow'
+		})
 	},
 	methods: {
-		queryList1(page) {
-			this.$http.get('/organization/list.json', {}).then((res) => {
-				let result = res.data.data || {};
-				this.orgList = result.list;
-				this.pageNumber = page;
-				this.pageTotal = result.total;
-			}).catch((res) => {
-				alert('接口异常');
-			});
+		...mapActions('organization/', {
+			queryList: 'queryList'
+		}),
+		/**
+		 * 查询
+		 * @return {[type]} [description]
+		 */
+		searchList() {
+			this.queryList({});
 		},
 		/**
 		 * 编辑
 		 */
 		updateRow(row) {
-			if (!row) return;
+			if (!this.selectRow) return;
 			this.$router.push('/orgnization/edit?id=1');
 		},
 		/**
@@ -62,13 +70,6 @@ export default {
 		 */
 		deleteCurRow() {
 			this.closeDialog();
-		},
-		queryList(page) {
-			this.queryList1(page);
-		},
-		onSelectRow(row) {
-			this.selectRow = row;
-			console.log(row)
 		}
 	},
 	components: {

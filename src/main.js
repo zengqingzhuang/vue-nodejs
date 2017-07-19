@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import App from './App.vue';
+import store from './store';
 
 // 机构配置列表页面
 import orgList from './page/orgnization/list.vue';
@@ -49,6 +50,7 @@ const router = new VueRouter({
 });
 
 new Vue({
-	router
+	router,
+	store
 }).$mount('#app');
 

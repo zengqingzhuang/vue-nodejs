@@ -18,7 +18,8 @@ module.exports = merge({
 	resolve: {
 		extensions: ['.vue', '.js', '.json', '.scss'],
 		alias: {
-			'vue': 'vue/dist/vue.js',
+			'vue': 'vue/dist/vue.min.js',
+			'vuex': 'vuex/dist/vuex.min.js',
 			'common': path.resolve(__dirname, '../src/common'),
 			'components': path.resolve(__dirname, '../src/components/')
 		},

@@ -48,7 +48,7 @@
         					:pageSize='pageSize'
         					:pageNumber='pageNumber'
         					:pageTotal='pageTotal'
-        					@queryList='queryList'>
+        					:namespace='namespace'>
         				</ui-pagination>
                     </div>
                 </div>
@@ -125,15 +125,17 @@
 			pageTotal: { // 总页数
 				type: Number,
 				default: 0
+			},
+			namespace: { // 命名空间
+				type: String,
+				default: ''
 			}
 		},
 		methods: {
 			onSelectRow(row, index) {
 				this.selectIndex = index;
-				this.$emit('onSelectRow', row);
-			},
-			queryList(page) {
-				this.$emit('queryList', page)
+				let fucName = this.namespace ? this.namespace + '/' + 'onSelectRow' : 'onSelectRow';
+				this.$store.dispatch(fucName, row);
 			}
 		},
 		components: {

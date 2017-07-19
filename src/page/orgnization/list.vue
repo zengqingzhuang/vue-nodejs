@@ -7,8 +7,7 @@
             :pageSize='pageSize'
             :pageNumber='pageNumber'
             :pageTotal='pageTotal'
-            @queryList='queryList'
-            @onSelectRow='onSelectRow'>
+            namespace='organization'>
             <div slot='content'>
                 <button class="btn btn-info" type="button" @click="updateRow"><i class="fa fa-paste"></i> 编辑</button>
                 <button class="btn btn-danger" type="button" @click="deleteRow"><i class="fa fa-times"></i> 删除</button>
@@ -30,7 +29,7 @@
                             <option>未开启</option>
                         </select>    
                     </div>
-                    <button class="btn btn-default btn-outline" type="button"><i class="fa fa-check"></i> 查询</button>
+                    <button class="btn btn-default btn-outline" type="button"><i class="fa fa-check" @click="searchList"></i> 查询</button>
                 </div>
             </div>
         </ui-table>
