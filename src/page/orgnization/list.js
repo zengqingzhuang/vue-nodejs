@@ -11,6 +11,7 @@ export default {
 		}
 	},
 	created() {
+		this.$store.dispatch('setNameSpace', 'organization');
 		this.queryList({
 			pageSize: 5,
 			pageNumber: 1

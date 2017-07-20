@@ -2,7 +2,7 @@
 import * as types from './mutation-types';
 
 export default {
-	[types.GET_PUBLIC_DATA](state, {}) {
-		state.publicData = {};
+	[types.SET_NAME_SPACE](state, name) {
+		state.namespace = name;
 	}
 }

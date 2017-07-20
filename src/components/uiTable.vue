@@ -125,16 +125,12 @@
 			pageTotal: { // 总页数
 				type: Number,
 				default: 0
-			},
-			namespace: { // 命名空间
-				type: String,
-				default: ''
 			}
 		},
 		methods: {
 			onSelectRow(row, index) {
 				this.selectIndex = index;
-				let fucName = this.namespace ? this.namespace + '/' + 'onSelectRow' : 'onSelectRow';
+				let fucName = this.$store.getters['namespace'] ? this.$store.getters['namespace'] + '/' + 'onSelectRow' : 'onSelectRow';
 				this.$store.dispatch(fucName, row);
 			}
 		},
