@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "async": "^2.3.0",
+    "axios": "^0.16.2",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "crypto": "0.0.3",

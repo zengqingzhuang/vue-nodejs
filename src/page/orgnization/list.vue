@@ -15,21 +15,21 @@
                 <button class="btn btn-danger" type="button" @click="stopRow"><i class="fa fa-warning"></i> 停用</button>
                 <div class="pull-right">
                     <div class="pull-left">
-                        <select class="form-control" name="state">
-                            <option>全部</option>
-                            <option>教育</option>
-                            <option>租房</option>
+                        <select class="form-control" name="state" v-model="scene">
+                            <option value="0">全部</option>
+                            <option value="1">教育</option>
+                            <option value="2">租房</option>
                         </select>    
                     </div>
                     <div class="pull-left search columns columns-right"><input class="form-control input-outline" type="text" placeholder="请输入要查询的信息"></div>
                     <div class="pull-left">
-                        <select class="form-control" name="state">
-                            <option>全部</option>
-                            <option>已开启</option>
-                            <option>未开启</option>
+                        <select class="form-control" name="state" v-model="state">
+                            <option value="0">全部</option>
+                            <option value="1">已开启</option>
+                            <option value="2">未开启</option>
                         </select>    
                     </div>
-                    <button class="btn btn-default btn-outline" type="button"><i class="fa fa-check" @click="searchList"></i> 查询</button>
+                    <button class="btn btn-default btn-outline" type="button" @click="searchList"><i class="fa fa-check"></i> 查询</button>
                 </div>
             </div>
         </ui-table>

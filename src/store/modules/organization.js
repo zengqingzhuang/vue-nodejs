@@ -1,5 +1,5 @@
 import * as types from '../mutation-types';
-import Vue from 'vue';
+import axios from 'axios';
 
 // 页面需要的数据
 const state = {
@@ -22,7 +22,7 @@ const getters = {
 // 页面调用的事件,可异步可同步--mapActions
 const actions = {
 	queryList({commit, state}, data) {
-		Vue.http.get('/organization/list.json', data).then((res) => {
+		axios.get('/organization/list.json', {params: data}).then((res) => {
 			let result = res.data.data;
 			let pageNumber = data.pageNumber;
 			commit(types.GET_ORG_LIST, {result, pageNumber});

@@ -4,6 +4,8 @@ import {mapGetters, mapActions} from 'Vuex';
 export default {
 	data() {
 		return {
+			scene: 0, // 场景
+			state: 0, // 状态
 			markDialog: 0, // 1-编辑弹窗 2-删除弹窗
 			columns: ['appId', 'crm-机构ID', '机构名称', '百度密钥', '机构密钥', '签名地址', '商户号', '创建时间', '修改时间', '状态']
 		}
@@ -25,14 +27,20 @@ export default {
 	},
 	methods: {
 		...mapActions('organization/', {
-			queryList: 'queryList'
+			queryList: 'queryList',
+			selectList: 'selectList'
 		}),
 		/**
 		 * 查询
 		 * @return {[type]} [description]
 		 */
 		searchList() {
-			this.queryList({});
+			this.queryList({
+				pageSize: this.pageSize,
+				pageNumber: this.pageNumber,
+				scene: this.scene,
+				state: this.state
+			});
 		},
 		/**
 		 * 编辑
