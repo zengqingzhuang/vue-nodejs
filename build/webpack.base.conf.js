@@ -2,6 +2,7 @@ let path = require('path');
 let webpack = require('webpack');
 let merge = require('webpack-merge');
 let px2rem = require('postcss-px2rem')
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let configParam = '';
 let NODE_ENV = process.env.NODE_ENV;
 if (NODE_ENV === 'development') {
@@ -10,10 +11,12 @@ if (NODE_ENV === 'development') {
 	configParam = require('./webpack.prod.conf');
 }
 module.exports = merge({
-	entry: './src/main.js',
+	entry: {
+		bundle: './src/main.js'
+	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
-		filename: '[name].[chunkhash].js'
+		filename: '[name].js' // 开发环境不加哈希值减少编译时间
 	},
 	resolve: {
 		extensions: ['.vue', '.js', '.json', '.scss'],
@@ -38,7 +41,7 @@ module.exports = merge({
 		}, {
 			test: /\.js$/,
 			loader: 'babel-loader',
-			exclude: /node_modules/,
+			exclude: /(node_modules|bower_components)/,
 			query: {
 				compact: true
 			} //解决js文件大于100KB报错的问题
@@ -50,7 +53,10 @@ module.exports = merge({
 				loader: "style-loader"
 			}, {
 				loader: "postcss-loader"
-			}]
+			}],
+			use: ExtractTextPlugin.extract({
+                use: 'css-loader'
+            })
 		}, {
 			test: /\.scss$/,
 			use: [{
@@ -61,7 +67,10 @@ module.exports = merge({
 				loader: "postcss-loader"
 			}, {
 				loader: "sass-loader"
-			}]
+			}],
+			use: ExtractTextPlugin.extract({
+                use: 'css-loader'
+            })
 		}, {
 			test: /\.(png|jpg|gif)$/,
 			loader: 'url-loader',

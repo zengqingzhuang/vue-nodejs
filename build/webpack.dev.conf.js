@@ -1,7 +1,7 @@
 let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-	devtool: '#source-map',
+	devtool: '#eval-source-map',
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {

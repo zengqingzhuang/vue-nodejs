@@ -1,10 +1,12 @@
 let webpack = require('webpack');
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
-//let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-	//devtool: '#eval-source-map',
-	devtool: false,
+	devtool: '#source-map',
+	output: {
+		filename: '[name].[chunkhash].js' // 缓存。1、chunkhash根据文件内容生成哈希值，2、hash生成哈希值所有文件都一样
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: 'index.html',
@@ -17,6 +19,7 @@ module.exports = {
 			},
 			chunksSortMode: 'dependency'
 		}),
+		// 公共模块提取，方便浏览器进行长期缓存
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendor',
 			minChunks: function(module, count) {
@@ -29,6 +32,7 @@ module.exports = {
 				)
 			}
 		}),
+		// mainfest文件存储webpack编译时产生的运行时代码，防止把运行时代码存储到vendor.js中导致浏览器重新加载。
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'manifest',
 			chunks: ['vendor']
@@ -38,7 +42,10 @@ module.exports = {
 				NODE_ENV: '"production"'
 			}
 		}),
-		new webpack.optimize.UglifyJsPlugin(),
-		//new ExtractTextPlugin("styles.css")
+		new webpack.optimize.UglifyJsPlugin({
+			sourceMap: false,
+			mangle: false
+		}),
+		new ExtractTextPlugin("styles.css")
 	]
 }
