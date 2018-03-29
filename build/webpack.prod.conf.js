@@ -12,10 +12,14 @@ module.exports = {
 			filename: 'index.html',
 			template: 'index.html',
 			inject: true,
-			minify: {
-				removeComments: true,
-				collapseWhitespace: true,
-				removeAttributeQuotes: true
+			minify: { // html-minifier
+				// minifyJS: true,           // 仅压缩内联在html里面的js
+				// minifyCSS: true,          // 仅压缩内联在html里面的css
+				// html5: true,              // 以html5的文档格式解析html的模板文件
+				removeComments: true, // 不删除Html文件里面的注释
+				collapseWhitespace: true, // 删除空格
+				removeAttributeQuotes: true,
+				preserveLineBreaks: false // 删除换行
 			},
 			chunksSortMode: 'dependency'
 		}),
