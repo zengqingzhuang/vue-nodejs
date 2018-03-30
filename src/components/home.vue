@@ -4,7 +4,7 @@
 <script type="text/ecmascript-6">
 	
 </script>
-<style lang="sass" scoped rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
 	.home {
 		width: 600px;
 		height: 600px;

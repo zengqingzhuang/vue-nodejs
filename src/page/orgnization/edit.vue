@@ -118,7 +118,7 @@
     import edit from './edit.js';
     export default edit;
 </script>
-<style lang="sass" scoped rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
     .address .row {
         margin-top: 10px;
     }

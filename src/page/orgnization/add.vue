@@ -118,7 +118,7 @@
     import add from './add.js';
     export default add;
 </script>
-<style lang="sass" scoped rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
     .address {
         margin-top: 10px;
     }

@@ -50,7 +50,7 @@
     }
 </script>
 
-<style lang="sass" scoped rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
     .layer {
         z-index: 999;
         position: fixed;

@@ -212,7 +212,7 @@
     	}
     }
 </script>
-<style lang="css" rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
 	#uiPagination {
 		text-align: right;
 	}

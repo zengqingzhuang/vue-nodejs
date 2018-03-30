@@ -139,7 +139,8 @@
 		}
 	}
 </script>
-<style lang="sass" scoped rel="stylesheet/sass">
+<!-- vue1.0 <style rel="stylesheet/scss" lang="scss"></style> -->
+<style lang="scss" scoped type="text/scss">
 	.mgin {
 		margin-top: 15px;
 	}

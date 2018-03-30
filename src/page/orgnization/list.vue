@@ -68,7 +68,7 @@
     import list from './list.js';
     export default list;
 </script>
-<style lang="sass" scoped rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
     .pull-left {
         margin-right: 5px;
     }

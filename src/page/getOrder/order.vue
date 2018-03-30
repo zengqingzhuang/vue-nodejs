@@ -105,5 +105,5 @@
     import order from './order.js';
     export default order;
 </script>
-<style lang="sass" scoped rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
 </style>

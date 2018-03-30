@@ -80,5 +80,5 @@
     import list from './list.js';
     export default list;
 </script>
-<style lang="sass" scoped rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
 </style>

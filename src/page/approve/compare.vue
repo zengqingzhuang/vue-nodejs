@@ -147,5 +147,5 @@
     import compare from './compare.js';
     export default compare;
 </script>
-<style lang="sass" scoped rel="stylesheet/sass">
+<style lang="scss" scoped type="text/scss">
 </style>
