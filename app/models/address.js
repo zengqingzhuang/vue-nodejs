@@ -2,10 +2,9 @@
  * @file 通知地址
  * @author dazhuang(zengqingzhuang@baidu.com)
  */
-'use strict';
 class addressModel {
-	getAddressList(param, callback) {
-		let data = {
+	getAddressList(param) {
+		return {
 			total: 50,
 			list: [{
 				corpid: 'zhangmen',
@@ -25,7 +24,6 @@ class addressModel {
 				params: 'state,money'
 			}]
 		}
-		callback(null, data);
 	}
 }
 module.exports = new addressModel();

@@ -2,28 +2,30 @@
  * @file 机构路由文件
  * @author dazhuang(zengqingzhuang@baidu.com)
  */
-let express = require('express');
-let router = express.Router();
-let helpers = require('../helpers');
-let log = require('../tools/log');
-let orgModel = require('../models/organization');
-router.get('/organization/list.:format', (req, res, next) => {
-	let condition = helpers.getRequestParams(req);
-	orgModel.getOrgList(condition, (err, result) => {
-		if (err) {
-			log.error('异步接口:' + req.originalUrl, '传入参数:' + JSON.stringify(condition), '错误信息:' + JSON.stringify(err));
-			return next(err);
-		}
+const express = require('express');
+const router = express.Router();
+const helpers = require('../helpers');
+const log = require('../tools/log');
+const orgModel = require('../models/organization');
+router.get('/organization/list.:format', async (req, res, next) => {
+	const condition = helpers.getRequestParams(req);
+	try {
+		const result = await orgModel.getOrgList(condition);
 		res.json({
-			status: 200,
+			status: 0,
 			data: result
 		});
-	});
+	} catch(err) {
+		log.error('异步接口:' + req.originalUrl, '传入参数:' + JSON.stringify(condition), '错误信息:' + JSON.stringify(err));
+		res.json({
+			status: 1
+		});
+	}
 });
 // demo router
 router.get('/demo/list.:format', (req, res, next) => {
 	res.json({
-		status: 20000
+		status: 200
 	});
 });
 module.exports = router;

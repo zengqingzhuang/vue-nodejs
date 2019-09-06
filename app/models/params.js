@@ -2,10 +2,9 @@
  * @file 推送参数
  * @author dazhuang(zengqingzhuang@baidu.com)
  */
-'use strict';
 class paramsModel {
-	getParamsList(param, callback) {
-		let data = {
+	getParamsList(param) {
+		return {
 			total: 50,
 			list: [{
 				className: 'A分类',
@@ -18,7 +17,6 @@ class paramsModel {
 				params: 'state,money,time'
 			}]
 		}
-		callback(null, data);
 	}
 }
 module.exports = new paramsModel();
